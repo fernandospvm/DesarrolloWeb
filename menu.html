@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Restaurante</a>
+
+            <!-- Botón responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces del navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookings.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Título principal -->
+    <section class="hero-title text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dark">Carta</h1>
+            <p class="lead text-muted">Consulta nuestra carta para hoy!</p>
+        </div>
+    </section>
+    <!-- Índice del menú -->
+    <section class="menu-index py-5">
+        <div class="container">
+            <ul class="list-group list-group-flush">
+
+                <!-- MENÚ DEL DÍA -->
+                <li class="list-group-item">
+                    <strong>Menú del día - 12€</strong>
+                    <ul class="mt-2">
+                        <li><strong>Primeros a elegir:</strong>
+                            <ul>
+                                <li>Macarrones con tomate</li>
+                                <li>Sopa de pollo con fideos</li>
+                            </ul>
+                        </li>
+                        <li><strong>Segundos platos:</strong>
+                            <ul>
+                                <li>Filete con patatas</li>
+                                <li>Merluza en salsa verde</li>
+                            </ul>
+                        </li>
+                        <li><strong>Postres:</strong>
+                            <ul>
+                                <li>Fruta de temporada</li>
+                                <li>Helado de sabores (consultar al camarero sabores disponibles)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- ENTRANTES -->
+                <li class="list-group-item">
+                    <strong>Entrantes</strong>
+                    <ul class="mt-2">
+                        <li>Plato de jamón ibérico</li>
+                        <li>Ensaladilla rusa</li>
+                    </ul>
+                </li>
+
+                <!-- PLATOS PRINCIPALES -->
+                <li class="list-group-item">
+                    <strong>Platos principales</strong>
+                    <ul class="mt-2">
+                        <li><strong>Carne</strong>
+                            <ul>
+                                <li>Solomillo de ternera</li>
+                                <li>Pollo al horno</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pescados</strong>
+                            <ul>
+                                <li>Dorada a la espalda</li>
+                                <li>Lubina al horno</li>
+                            </ul>
+                        </li>
+                        <li><strong>Otros</strong>
+                            <ul>
+                                <li>Paella mixta</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- POSTRES -->
+                <li class="list-group-item">
+                    <strong>Postres</strong>
+                    <ul class="mt-2">
+                        <li>Tarta de queso</li>
+                        <li>Flan casero</li>
+                    </ul>
+                </li>
+
+                <!-- BEBIDAS -->
+                <li class="list-group-item">
+                    <strong>Bebidas y demás</strong>
+                    <ul class="mt-2">
+                        <li>Cerveza - 2,50€</li>
+                        <li><strong>Vinos</strong>
+                            <ul>
+                                <li><strong>Tinto</strong>
+                                    <ul>
+                                        <li>Ribera del Duero
+                                            <ul>
+                                                <li>Copa</li>
+                                                <li>Botella 70cl</li>
+                                            </ul>
+                                        </li>
+                                        <li>Rioja
+                                            <ul>
+                                                <li>Copa</li>
+                                                <li>Botella 70cl</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><strong>Blanco</strong>
+                                    <ul>
+                                        <li>Albariño
+                                            <ul>
+                                                <li>Copa</li>
+                                                <li>Botella 70cl</li>
+                                            </ul>
+                                        </li>
+                                        <li>Verdejo
+                                            <ul>
+                                                <li>Copa</li>
+                                                <li>Botella 70cl</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Refrescos - Consultar a personal disponibilidad</li>
+                        <li>Botella de agua 1L</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
