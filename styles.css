@@ -90,9 +90,9 @@
 
 /*footer general*/
 /* Footer */
+/*Mismos colores en el footer que en el navbar*/
 footer {
     background-color: #212529;
-    /* mismo color que el navbar oscuro de Bootstrap */
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
@@ -107,6 +107,5 @@ footer a {
 
 footer a:hover {
     color: #1a0dab;
-    /* mismo color hover que en el navbar */
     text-decoration: underline;
 }
