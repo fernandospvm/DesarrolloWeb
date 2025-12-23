@@ -8,6 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
     <!-- Archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
@@ -58,11 +60,19 @@
     <section class="menu-index py-5">
         <div class="container">
             <ul class="list-group list-group-flush">
-
                 <!-- MENÚ DEL DÍA -->
                 <li class="list-group-item">
+
+                    <button class="btn btn-sm btn-link p-0 border-0 text-dark"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#menu-dia"
+                            aria-expanded="true">
+                        <i class="bi bi-chevron-down" id="flecha-menu-dia"></i>
+                    </button>
+
                     <strong>Menú del día - 12€</strong>
-                    <ul class="mt-2">
+
+                    <ul class="mt-2 collapse show" id="menu-dia">
                         <li><strong>Primeros a elegir:</strong>
                             <ul>
                                 <li>Macarrones con tomate</li>
@@ -82,12 +92,18 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
 
+                </li>
                 <!-- ENTRANTES -->
                 <li class="list-group-item">
+                    <button class="btn btn-sm btn-link p-0 border-0 text-dark"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#entrantes"
+                            aria-expanded="true">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
                     <strong>Para compartir</strong>
-                    <ul class="mt-2">
+                    <ul class="mt-2 collapse show" id="entrantes">
                         <li>Plato de jamón ibérico</li>
                         <li>Ensaladilla rusa</li>
                     </ul>
@@ -95,8 +111,14 @@
 
                 <!-- PLATOS PRINCIPALES -->
                 <li class="list-group-item">
+                    <button class="btn btn-sm btn-link p-0 border-0 text-dark"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#platos-principales"
+                            aria-expanded="true">
+                        <i class="bi bi-chevron-down" id="flecha-platos-principales"></i>
+                    </button>
                     <strong>Platos principales</strong>
-                    <ul class="mt-2">
+                    <ul class="mt-2 collapse show" id="platos-principales">
                         <li><strong>Carne</strong>
                             <ul>
                                 <li>Solomillo de ternera</li>
@@ -119,8 +141,14 @@
 
                 <!-- POSTRES -->
                 <li class="list-group-item">
+                    <button class="btn btn-sm btn-link p-0 border-0 text-dark"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#postres"
+                            aria-expanded="true">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
                     <strong>Postres</strong>
-                    <ul class="mt-2">
+                    <ul class="mt-2 collapse show" id="postres">
                         <li>Tarta de queso</li>
                         <li>Flan casero</li>
                     </ul>
@@ -128,8 +156,14 @@
 
                 <!-- BEBIDAS -->
                 <li class="list-group-item">
+                    <button class="btn btn-sm btn-link p-0 border-0 text-dark"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#bebidas"
+                            aria-expanded="true">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
                     <strong>Bebidas y demás</strong>
-                    <ul class="mt-2">
+                    <ul class="mt-2 collapse show" id="bebidas">
                         <li>Cerveza - 2,50€</li>
                         <li><strong>Vinos</strong>
                             <ul>
@@ -185,6 +219,7 @@
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
