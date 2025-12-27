@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Archivo CSS externo -->
+    <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -19,58 +19,150 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">Restaurante</a>
 
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="bookings.html">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Carta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contacto</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="bookings.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Carta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Título principal -->
+
+    <!-- Título -->
     <section class="hero-title text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold text-dark">Reservas</h1>
-            <p class="lead text-muted">Reserva tu mesa para comer con nosotros!</p>
+            <h1 class="display-4 fw-bold">Reservas</h1>
+            <p class="lead text-muted">Reserva tu mesa para comer con nosotros</p>
         </div>
     </section>
-    <!--Formulario hacia abajo-->
-    <!--Formulario hacia arriba-->
 
-    <!--Header hacia abajo-->
-    <footer>
+    <!-- FORMULARIO -->
+    <section class="py-5">
         <div class="container">
-            <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
-            <p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+
+                            <h2 class="mb-4 text-center">Formulario de reserva</h2>
+
+                            <form id="formReserva" novalidate>
+
+                                <!-- Nombre -->
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                    <div class="invalid-feedback">
+                                        Introduce tu nombre
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Email no válido
+                                    </div>
+                                </div>
+
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+                                    <label class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" required>
+                                    <div class="invalid-feedback">
+                                        Introduce un teléfono
+                                    </div>
+                                </div>
+
+                                <!-- Fecha -->
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" id="fecha" required>
+                                    <div class="invalid-feedback">
+                                        Selecciona una fecha
+                                    </div>
+                                </div>
+                                <!-- Personas -->
+                                <div class="mb-4">
+                                    <label class="form-label">Número de personas</label>
+                                    <select class="form-select" id="personas" required>
+                                        <option value="">Selecciona...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6+</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Selecciona el número de personas
+                                    </div>
+                                </div>
+
+                                <!-- Botón -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-dark">
+                                        Reservar mesa
+                                    </button>
+                                </div>
+
+                            </form>
+
+                            <!-- Mensaje -->
+                            <div id="mensajeExito" class="alert alert-success mt-4 d-none">
+                                Reserva enviada correctamente ✅
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p class="mb-1">© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+            <p class="mb-0">
                 <a href="politica-privacidad.html">Política de Privacidad</a> |
                 <a href="contact.html">Contacto</a>
             </p>
         </div>
     </footer>
 
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!-- SCRIPT VALIDACIÓN -->
+    <script>
+        const form = document.getElementById("formReserva");
+        const mensaje = document.getElementById("mensajeExito");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.classList.add("was-validated");
+                return;
+            }
+
+            // Simula envío correcto
+            mensaje.classList.remove("d-none");
+            form.reset();
+            form.classList.remove("was-validated");
+        });
+    </script>
+
+</body>
 </html>
