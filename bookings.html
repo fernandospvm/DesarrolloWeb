@@ -26,10 +26,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="bookings.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="bookings.html">Reservas y contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="menu.html">Carta</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -77,12 +76,19 @@
                                 <!-- Teléfono -->
                                 <div class="mb-3">
                                     <label class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" id="telefono" required>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="telefono"
+                                        required
+                                        inputmode="numeric"
+                                        pattern="[0-9]+"
+                                        maxlength="9"
+                                    >
                                     <div class="invalid-feedback">
-                                        Introduce un teléfono
+                                        Introduce un teléfono válido (solo números)
                                     </div>
                                 </div>
-
                                 <!-- Fecha -->
                                 <div class="mb-3">
                                     <label class="form-label">Fecha</label>
@@ -94,20 +100,19 @@
                                 <!-- Personas -->
                                 <div class="mb-4">
                                     <label class="form-label">Número de personas</label>
-                                    <select class="form-select" id="personas" required>
-                                        <option value="">Selecciona...</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6+</option>
-                                    </select>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="personas"
+                                        min="1"
+                                        step="1"
+                                        placeholder="Ej: 2"
+                                        required
+                                    >
                                     <div class="invalid-feedback">
-                                        Selecciona el número de personas
+                                        Introduce un número entero válido
                                     </div>
                                 </div>
-
                                 <!-- Botón -->
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-dark">
@@ -129,6 +134,92 @@
             </div>
         </div>
     </section>
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+
+                            <h2 class="mb-4 text-center">Contacto</h2>
+
+                            <form id="formContacto" novalidate>
+
+                                <!-- Nombre -->
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="contactoNombre" required>
+                                    <div class="invalid-feedback">
+                                        Introduce tu nombre
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="contactoEmail" required>
+                                    <div class="invalid-feedback">
+                                        Email no válido
+                                    </div>
+                                </div>
+
+                                <!-- Asunto -->
+                                <div class="mb-3">
+                                    <label class="form-label">Asunto</label>
+                                    <input type="text" class="form-control" id="contactoAsunto" required>
+                                    <div class="invalid-feedback">
+                                        Introduce un asunto
+                                    </div>
+                                </div>
+
+                                <!-- Mensaje -->
+                                <div class="mb-4">
+                                    <label class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="contactoMensaje" rows="4" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Escribe tu mensaje
+                                    </div>
+                                </div>
+
+                                <!-- Botón -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-dark">
+                                        Enviar mensaje
+                                    </button>
+                                </div>
+
+                            </form>
+
+                            <!-- Mensaje éxito -->
+                            <div id="mensajeContacto" class="alert alert-success mt-4 d-none">
+                                Mensaje enviado correctamente 📩
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Dónde estamos</h2>
+
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps?q=Universidad+Francisco+de+Vitoria&output=embed"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-light py-3">
@@ -136,33 +227,13 @@
             <p class="mb-1">© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
             <p class="mb-0">
                 <a href="politica-privacidad.html">Política de Privacidad</a> |
-                <a href="contact.html">Contacto</a>
             </p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- SCRIPT VALIDACIÓN -->
-    <script>
-        const form = document.getElementById("formReserva");
-        const mensaje = document.getElementById("mensajeExito");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            if (!form.checkValidity()) {
-                form.classList.add("was-validated");
-                return;
-            }
-
-            // Simula envío correcto
-            mensaje.classList.remove("d-none");
-            form.reset();
-            form.classList.remove("was-validated");
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
