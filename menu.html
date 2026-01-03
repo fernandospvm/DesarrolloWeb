@@ -6,46 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carta</title>
 
+    <!--Icono de pestaña-->
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--Iconos de bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-
     <!-- Archivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <!-- Barra de aceptación de cookies -->
+    <div id="barraaceptacion" style="display: none;">
+        <div class="cookie-overlay">
+            <div class="cookie-content">
+                <h3>Política de Cookies</h3>
+                <p>Este sitio web utiliza cookies para mejorar tu experiencia. Para poder usar todas las funciones del sitio, debes aceptar las cookies.</p>
+                <p>Puedes revisar nuestra <a href="politica-privacidad.html">Política de Privacidad</a> para más información.</p>
+                <button id="btn-aceptar-cookies" class="btn btn-dark">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Lightbox -->
+    <div class="modal fade lightbox-modal" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center p-0">
+                    <img id="lightboxImage" src="" alt="" class="lightbox-img">
+                    <div class="lightbox-caption">
+                        <h5 id="lightboxTitle"></h5>
+                        <p id="lightboxDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Restaurante</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="Logo Restaurante" width="40" height="40" class="me-2">
+                La Taberna del Ayer
+            </a>
 
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i>
+                            Inicio
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="bookings.html">Reservas</a>
+                        <a class="nav-link" href="bookings.html">
+                            <i class="bi bi-calendar-check me-1"></i>
+                            Reservas
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Carta</a>
+                        <a class="nav-link active" href="menu.html">
+                            <i class="bi bi-receipt"></i> 
+                            Carta
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Sobre Nosotros
+                        </a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope-fill"></i>
+                            Contacto
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Título principal -->
     <section class="hero-title text-center py-5">
         <div class="container">
@@ -53,13 +109,13 @@
             <p class="lead text-muted">Consulta nuestra carta para hoy!</p>
         </div>
     </section>
+
     <!-- Índice del menú -->
-    <section class="menu-index py-5">
+    <main class="menu-index py-5">
         <div class="container">
             <ul class="list-group list-group-flush">
                 <!-- MENÚ DEL DÍA -->
                 <li class="list-group-item">
-
                     <button class="btn btn-sm btn-link p-0 border-0 text-dark"
                             data-bs-toggle="collapse"
                             data-bs-target="#menu-dia"
@@ -89,8 +145,8 @@
                             </ul>
                         </li>
                     </ul>
-
                 </li>
+
                 <!-- ENTRANTES -->
                 <li class="list-group-item">
                     <button class="btn btn-sm btn-link p-0 border-0 text-dark"
@@ -203,19 +259,227 @@
                     </ul>
                 </li>
             </ul>
+
+            <!-- GALERÍA DE PLATOS -->
+            <section class="galeria-platos">
+                <h2 class="text-center mb-5">
+                    <i class="bi bi-camera-fill me-2"></i>
+                    Nuestros Platos
+                </h2>
+                
+                <div class="row">
+                    <!-- Plato 1: Solomillo de Ternera -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/solomillo.jpg" alt="Solomillo de Ternera" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Solomillo de Ternera" 
+                                 data-description="Jugoso solomillo de ternera gallega a la parrilla, acompañado de patatas panaderas y pimientos asados.">
+                            <div class="pie-foto">
+                                <h5>Solomillo de Ternera</h5>
+                                <p>Jugoso solomillo a la parrilla con patatas panaderas</p>
+                                <div class="text-end">
+                                    <span class="precio">24,50€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plato 2: Dorada a la Espalda -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/dorada.jpg" alt="Dorada a la Espalda" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Dorada a la Espalda" 
+                                 data-description="Dorada fresca del Mediterráneo, cocinada a la espalda con sal gruesa y acompañada de verduras asadas.">
+                            <div class="pie-foto">
+                                <h5>Dorada a la Espalda</h5>
+                                <p>Pescado fresco con sal gruesa y verduras asadas</p>
+                                <div class="text-end">
+                                    <span class="precio">19,90€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plato 3: Paella Mixta -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/paella.jpg" alt="Paella Mixta" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Paella Mixta" 
+                                 data-description="Auténtica paella valenciana con pollo, conejo, marisco y verduras frescas. Elaborada en paellera de hierro.">
+                            <div class="pie-foto">
+                                <h5>Paella Mixta</h5>
+                                <p>Para 2-3 personas. Incluye pollo, conejo y marisco</p>
+                                <div class="text-end">
+                                    <span class="precio">38,00€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plato 4: Jamón Ibérico -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/jamon.jpg" alt="Jamón Ibérico" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Jamón Ibérico de Bellota" 
+                                 data-description="Finas lonchas de jamón 100% ibérico de bellota, cortado a cuchillo en el momento. Acompañado de pan con tomate.">
+                            <div class="pie-foto">
+                                <h5>Jamón Ibérico</h5>
+                                <p>100% ibérico de bellota, cortado a cuchillo</p>
+                                <div class="text-end">
+                                    <span class="precio">16,80€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plato 5: Tarta de Queso -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/cheesecake.jpg" alt="Tarta de Queso" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Tarta de Queso Casera" 
+                                 data-description="Tarta de queso al horno con base de galleta casera. Elaborada con queso crema de la zona y mermelada de frutos rojos.">
+                            <div class="pie-foto">
+                                <h5>Tarta de Queso</h5>
+                                <p>Casera al horno con mermelada de frutos rojos</p>
+                                <div class="text-end">
+                                    <span class="precio">6,50€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plato 6: Merluza en Salsa Verde -->
+                    <div class="col-lg-4 col-md-6 galeria-item">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="images/merluza.jpg" alt="Merluza en Salsa Verde" class="galeria-img" 
+                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                                 data-title="Merluza en Salsa Verde" 
+                                 data-description="Lomos de merluza del Cantábrico en salsa verde con almejas y espárragos trigueros. Un clásico de la cocina vasca.">
+                            <div class="pie-foto">
+                                <h5>Merluza en Salsa Verde</h5>
+                                <p>Con almejas y espárragos trigueros</p>
+                                <div class="text-end">
+                                    <span class="precio">22,90€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="row mt-5">
+                    <div class="col-md-8 mx-auto">
+                        <div class="alert alert-info">
+                            <h5 class="alert-heading">
+                                <i class="bi bi-info-circle me-2"></i>
+                                Sobre nuestros platos
+                            </h5>
+                            <p class="mb-0">
+                                Todas nuestras fotografías son reales y muestran exactamente lo que recibirás en tu mesa. 
+                                Utilizamos ingredientes frescos de temporada y técnicas tradicionales. 
+                                Las imágenes pueden variar ligeramente según disponibilidad del mercado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Información adicional para alcanzar 3000px -->
+            <div class="mt-5 pt-5">
+                <h3>Recomendaciones del Chef</h3>
+                <p>Nuestro chef recomienda estos maridajes para disfrutar al máximo de nuestros platos:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card mb-3 border-0 shadow-sm card-recomendacion">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="bi bi-emoji-sunglasses me-2"></i>
+                                    Para Carnes
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Solomillo de ternera:</strong> Rioja Reserva 2018<br>
+                                    <strong>Pollo al horno:</strong> Verdejo Rueda 2022
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3 border-0 shadow-sm card-recomendacion">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="bi bi-emoji-heart-eyes me-2"></i>
+                                    Para Pescados
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Dorada:</strong> Albariño Rías Baixas 2023<br>
+                                    <strong>Merluza:</strong> Txakoli Getaria 2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Más contenido para altura -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h4>Políticas del Restaurante</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="bi bi-clock-history me-2 text-primary"></i>
+                                <strong>Tiempos de preparación:</strong> Los platos se preparan al momento, el tiempo medio de espera es de 20-30 minutos.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-people-fill me-2 text-primary"></i>
+                                <strong>Grupos:</strong> Para grupos mayores de 8 personas, se recomienda reservar con al menos 48 horas de antelación.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-exclamation-triangle-fill me-2 text-primary"></i>
+                                <strong>Alergias:</strong> Informe a nuestro personal de cualquier alergia o intolerancia alimentaria.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-credit-card-fill me-2 text-primary"></i>
+                                <strong>Pagos:</strong> Aceptamos todas las tarjetas de crédito/débito y efectivo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+            <p>© 2025 La Taberna del Ayer. Todos los derechos reservados.</p>
             <p>
-                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="politica-privacidad.html">Política de Privacidad</a>
             </p>
         </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Script de cookies -->
+    <script src="js/cookies.js"></script>
+    <!-- Script propio -->
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Configurar el botón de aceptar cookies
+        $(document).ready(function() {
+            $('#btn-aceptar-cookies').click(function() {
+                ponerCookie();
+            });
+        });
+    </script>
 </body>
 
 </html>

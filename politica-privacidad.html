@@ -6,62 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Política de Privacidad</title>
 
+    <!--Icono de pestaña-->
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--Iconos de bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Archivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <!-- Barra de aceptación de cookies -->
+    <div id="barraaceptacion" style="display: none;">
+        <div class="cookie-overlay">
+            <div class="cookie-content">
+                <h3>Política de Cookies</h3>
+                <p>Este sitio web utiliza cookies para mejorar tu experiencia. Para poder usar todas las funciones del sitio, debes aceptar las cookies.</p>
+                <p>Puedes revisar nuestra <a href="politica-privacidad.html">Política de Privacidad</a> para más información.</p>
+                <button id="btn-aceptar-cookies" class="btn btn-dark">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Restaurante</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="Logo Restaurante" width="40" height="40" class="me-2">
+                La Taberna del Ayer
+            </a>
 
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i>
+                            Inicio
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="bookings.html">Reservas</a>
+                        <a class="nav-link" href="bookings.html">
+                            <i class="bi bi-calendar-check me-1"></i>
+                            Reservas
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Carta</a>
+                        <a class="nav-link" href="menu.html">
+                            <i class="bi bi-receipt"></i> 
+                            Carta
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Sobre Nosotros
+                        </a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope-fill"></i>
+                            Contacto
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Título principal -->
     <section class="hero-title text-center py-5">
         <div class="container">
             <h1 class="display-4 fw-bold text-dark">Política de privacidad</h1>
-            <p class="lead text-muted">Política de privacidad del restaurante. Todos los derechos a datos, pagos
-                adelantados y demás, reemblso disponible si se cancela la reserva 48 horas antes</p>
+            <p class="lead text-muted">Política de privacidad del restaurante</p>
         </div>
     </section>
+
+    <!-- Contenido de la política -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Protección de datos</h2>
+                    <p>En cumplimiento de lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, le informamos que los datos personales que nos proporcione serán tratados de forma confidencial y serán incorporados a los correspondientes ficheros de los que es responsable RESTAURANTE.</p>
+                    
+                    <h3 class="mt-4">Finalidad del tratamiento</h3>
+                    <p>Los datos personales que nos facilite a través de los formularios de contacto, reservas o newsletter serán utilizados para:</p>
+                    <ul>
+                        <li>Gestionar las reservas de mesa solicitadas</li>
+                        <li>Responder a sus consultas y peticiones de información</li>
+                        <li>Enviarle comunicaciones comerciales, si nos ha dado su consentimiento</li>
+                        <li>Mejorar nuestros servicios y atención al cliente</li>
+                    </ul>
+                    
+                    <h3 class="mt-4">Derechos del usuario</h3>
+                    <p>Usted puede ejercer sus derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad dirigiendo una solicitud por escrito a nuestra dirección física o enviando un correo electrónico a: fernando.spv@gmail.com</p>
+                    
+                    <h3 class="mt-4">Política de cookies</h3>
+                    <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y ofrecer contenidos de interés. Al continuar con la navegación entendemos que se acepta nuestra <strong>política de cookies</strong>.</p>
+                    
+                    <h3 class="mt-4">Cancelación de reservas</h3>
+                    <p>El reembolso estará disponible si se cancela la reserva con al menos 48 horas de antelación. Para cancelaciones realizadas con menos tiempo, se retendrá el 50% del importe de la reserva.</p>
+                    
+                    <h3 class="mt-4">Derechos de autor</h3>
+                    <p>Todo el contenido de este sitio web (textos, imágenes, logotipos, etc.) es propiedad de RESTAURANTE o de sus colaboradores y está protegido por las leyes de propiedad intelectual.</p>
+                    
+                    <h3 class="mt-4">Contacto</h3>
+                    <p>Para cualquier consulta relacionada con nuestra política de privacidad, puede contactarnos en:</p>
+                    <ul>
+                        <li><strong>Email:</strong> fernando.spv@gmail.com</li>
+                        <li><strong>Teléfono:</strong> +34 689 16 04 82</li>
+                        <li><strong>Dirección:</strong> Universidad Francisco de Vitoria, Carretera de Majadahonda, km 1,800, Pozuelo de Alarcón</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer>
         <div class="container">
-            <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+            <p>© 2025 La Taberna del Ayer. Todos los derechos reservados.</p>
             <p>
-                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="politica-privacidad.html">Política de Privacidad</a>
             </p>
         </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Script de cookies -->
+    <script src="js/cookies.js"></script>
+    <!-- Script propio -->
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Configurar el botón de aceptar cookies
+        $(document).ready(function() {
+            $('#btn-aceptar-cookies').click(function() {
+                ponerCookie();
+            });
+        });
+    </script>
 </body>
 
 </html>

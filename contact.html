@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reserva tu mesa</title>
+    <title>Contacto</title>
 
     <!--Icono de pestaña-->
     <link rel="icon" href="images/logo.jpg" type="image/x-icon">
@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="bookings.html">
+                        <a class="nav-link" href="bookings.html">
                             <i class="bi bi-calendar-check me-1"></i>
                             Reservas
                         </a>
@@ -76,7 +76,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link active" href="contact.html">
                             <i class="bi bi-envelope-fill"></i>
                             Contacto
                         </a>
@@ -90,142 +90,8 @@
     <!-- Título -->
     <section class="hero-title text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold">Reservas</h1>
-            <p class="lead text-muted">Reserva tu mesa para comer con nosotros</p>
-        </div>
-    </section>
-
-    <!-- FORMULARIO DE RESERVA -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body p-4">
-                            <h2 class="mb-4 text-center">Formulario de reserva</h2>
-
-                            <form id="formReserva" novalidate method="POST" action="https://postman-echo.com/post">
-                                <!-- Nombre con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder=" " required>
-                                    <label for="nombre">Nombre*</label>
-                                    <div class="invalid-feedback">
-                                        Introduce tu nombre
-                                    </div>
-                                </div>
-
-                                <!-- Apellidos con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder=" " required>
-                                    <label for="apellidos">Apellidos*</label>
-                                    <div class="invalid-feedback">
-                                        Introduce tus apellidos
-                                    </div>
-                                </div>
-
-                                <!-- Email con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder=" " required>
-                                    <label for="email">Email*</label>
-                                    <div class="invalid-feedback">
-                                        Email no válido
-                                    </div>
-                                </div>
-
-                                <!-- Teléfono con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="telefono"
-                                        name="telefono"
-                                        placeholder=" "
-                                        required
-                                        inputmode="numeric"
-                                        pattern="[0-9]+"
-                                        maxlength="9"
-                                    >
-                                    <label for="telefono">Teléfono* (9 dígitos)</label>
-                                    <div class="invalid-feedback">
-                                        Introduce un teléfono válido (solo números)
-                                    </div>
-                                </div>
-
-                                <!-- Tipo de Evento con Datalist -->
-                                <div class="mb-3">
-                                    <label class="form-label">Tipo de evento (opcional)</label>
-                                    <input list="eventos" id="evento" name="evento" class="form-control" placeholder="Selecciona o escribe...">
-                                    <datalist id="eventos">
-                                        <option value="Cumpleaños">
-                                        <option value="Aniversario">
-                                        <option value="Reunión de trabajo">
-                                        <option value="Cena romántica">
-                                        <option value="Celebración familiar">
-                                        <option value="Cena de negocios">
-                                    </datalist>
-                                </div>
-
-                                <!-- Fecha -->
-                                <div class="mb-3">
-                                    <label class="form-label">Fecha*</label>
-                                    <input type="date" class="form-control" id="fecha" name="fecha" required>
-                                    <div class="invalid-feedback">
-                                        Selecciona una fecha
-                                    </div>
-                                </div>
-
-                                <!-- Personas -->
-                                <div class="mb-4">
-                                    <label class="form-label">Número de personas*</label>
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        id="personas"
-                                        name="personas"
-                                        min="1"
-                                        step="1"
-                                        placeholder="Ej: 2"
-                                        required
-                                    >
-                                    <div class="invalid-feedback">
-                                        Introduce un número entero válido
-                                    </div>
-                                </div>
-
-                                <!-- Comentarios -->
-                                <div class="mb-4">
-                                    <label class="form-label">Información extra para el restaurante</label>
-                                    <textarea
-                                        class="form-control"
-                                        id="comentarios"
-                                        name="comentarios"
-                                        placeholder="Aquí, pon cualquier cosa que consideres significativa en tu reserva."
-                                        rows="4"
-                                    ></textarea>
-                                </div>
-
-                                <!-- Botón -->
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-dark btn-lg">
-                                        <i class="bi bi-calendar-check me-2"></i>
-                                        Reservar mesa
-                                    </button>
-                                </div>
-
-                                <!-- Obligatorio -->
-                                <p class="form-text text-muted text-end mb-0 mt-3">
-                                    * Campo obligatorio
-                                </p>
-                            </form>
-
-                            <!-- Mensaje de éxito -->
-                            <div id="mensajeExito" class="alert alert-success mt-4 d-none">
-                                Reserva enviada correctamente ✅
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="display-4 fw-bold">Contacto</h1>
+            <p class="lead text-muted">Contacta con nosotros para contarnos cualquier cosa!</p>
         </div>
     </section>
 
@@ -395,30 +261,7 @@
     </section>
 
     <!-- Contenido adicional para alcanzar 3000px -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Información importante sobre reservas</h3>
-                    <ul>
-                        <li>Las reservas se confirman por email o teléfono</li>
-                        <li>Para grupos mayores de 8 personas, contactar por teléfono</li>
-                        <li>Disponemos de parking gratuito para clientes</li>
-                        <li>Aceptamos tarjetas de crédito y débito</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h3>Política de cancelación</h3>
-                    <ul>
-                        <li>Cancelaciones hasta 48 horas antes: reembolso completo</li>
-                        <li>Cancelaciones entre 48 y 24 horas antes: 50% de penalización</li>
-                        <li>Cancelaciones con menos de 24 horas: no reembolsable</li>
-                        <li>Para modificaciones, contactar con al menos 24 horas de antelación</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Banner para móviles -->
     <div class="mobile-banner d-block d-sm-none">
@@ -457,7 +300,6 @@
     
     <!-- Scripts propios -->
     <script src="js/script.js"></script>
-    
     
 </body>
 </html>

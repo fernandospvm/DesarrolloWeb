@@ -4,67 +4,376 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros</title>
+    <title>Sobre Nosotros</title>
+
+    <!--Icono de pestaña-->
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--Iconos de bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Archivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <!-- Barra de aceptación de cookies -->
+    <div id="barraaceptacion" style="display: none;">
+        <div class="cookie-overlay">
+            <div class="cookie-content">
+                <h3>Política de Cookies</h3>
+                <p>Este sitio web utiliza cookies para mejorar tu experiencia. Para poder usar todas las funciones del sitio, debes aceptar las cookies.</p>
+                <p>Puedes revisar nuestra <a href="politica-privacidad.html">Política de Privacidad</a> para más información.</p>
+                <button id="btn-aceptar-cookies" class="btn btn-dark">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Restaurante</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="Logo Restaurante" width="40" height="40" class="me-2">
+                La Taberna del Ayer
+            </a>
 
-            <!-- Botón responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del navbar -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill me-1"></i>
+                            Inicio
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="bookings.html">Reservas</a>
+                        <a class="nav-link" href="bookings.html">
+                            <i class="bi bi-calendar-check me-1"></i>
+                            Reservas
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Carta</a>
+                        <a class="nav-link" href="menu.html">
+                            <i class="bi bi-receipt"></i> 
+                            Carta
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">Sobre Nosotros</a>
+                        <a class="nav-link active" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Sobre Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope-fill"></i>
+                            Contacto
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Banner promocional -->
+    <div id="bannerPromocional" class="banner-promocional banner-posicion-bottom">
+        <div class="banner-promocional-contenido">
+            <div class="banner-promocional-texto">
+                <div class="banner-promocional-titulo">
+                    <i class="bi bi-clock-history"></i>
+                    <span>Descubre Nuestra Historia</span>
+                </div>
+                <div class="banner-promocional-descripcion">
+                    Más de 100 años de tradición culinaria te esperan. Ve nuestros videos exclusivos y conoce el secreto de nuestros platos.
+                </div>
+            </div>
+            <button class="btn-cerrar-promocional" id="btnCerrarPromocional" aria-label="Cerrar banner">
+                <i class="bi bi-x"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Título principal -->
     <section class="hero-title text-center py-5">
         <div class="container">
             <h1 class="display-4 fw-bold text-dark">Sobre Nosotros</h1>
-            <p class="lead text-muted">Conoce nuestra historia y pasión por la buena comida</p>
+            <p class="lead text-muted">Conoce nuestra historia, nuestro equipo y nuestra pasión por la buena comida</p>
         </div>
     </section>
 
-    <!--footer-->
-    <footer>
+    <!-- Contenido principal -->
+    <main class="py-5">
         <div class="container">
-            <p>© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
-            <p>
-                <a href="politica-privacidad.html">Política de Privacidad</a> |
-            </p>
+            <!-- Sección 1: Imagen + Texto -->
+            <section class="mb-5 pb-5">
+                <h2 class="text-center mb-5">Nuestros Orígenes</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="images/pasadofundacion.jpg" alt="Interior del restaurante" class="img-fluid rounded" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ps-lg-4">
+                            <h3>Cien años de memoria, fuego lento y tradición madrileña</h3>
+                            <p>La historia de La Taberna del Ayer comienza en 1926, cuando don Pelayo Villanueva, un cocinero madrileño de carácter firme y manos artesanas, decidió abrir una pequeña casa de comidas en un rincón humilde de la ciudad. Pelayo estaba convencido de que la cocina era una forma de preservar el tiempo: un guiso podía contar más sobre Madrid que cualquier libro, y un caldo reposado al fuego lento podía guardar la memoria de generaciones enteras.</p>
+                            <p>Con esa idea en mente, levantó un local sencillo, de mesas de madera y olor a puchero recién hecho. Allí nacieron los primeros platos que, con el paso de los años, se convertirían en emblemas de la casa: cocido madrileño, callos, sopas humeantes y carnes que parecían hablar del pasado. Así nació La Taberna del Ayer, un lugar donde cada receta era un homenaje a la cocina de siempre.</p>
+                            <p>En la imagen, se puede ver a Don Pelayo con su familia el día de la inauguración del restaurante en 1926</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Imagen + Texto -->
+            <section class="mb-5 pb-5">
+                <h2 class="text-center mb-5">La Guerra Civil y su paso hasta la actualidad</h2>
+                <div class="row align-items-start">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <div class="pe-lg-4">
+                            <h3>Una familia unida por el fuego y la tradición</h3>
+                            <p>Tras la guerra civil española, en la que don Pelayo falleció en combate, fueron sus hijos quienes decidieron continuar el legado que dejó su padre con su restaurante. Conservaron las recetas manuscritas de su padre como si de un tesoro se tratara, y se negaron a realizar cualquier cambio sobre la receta como si se tratara de una decisión histórica.</p>
+                            <p>En los años 60 y 70, la tercera generación modernizó el local, pero jamás la esencia. La Taberna del Ayer siguió siendo un refugio para vecinos, viajeros y amantes de la cocina madrileña que buscaban autenticidad en cada plato.</p>
+                            <p>La siguiente generación, abrió un segundo local en Chamberí, en el corazón de la capital, iniciando así una nueva etapa y consolidando a la Taberna del ayer como un clásico imprescindible de la comida madrileña.</p>
+                            <p>Hoy en día, la Taberna del Ayer se ha consolidado como uno de los restaurantes más emblemáticos de todo Madrid, siendo una parada imprescindible para cualquier turista, y también de los locales. Siendo también premiada por distintas revistas y expertos en cocina por su calidad y servicio hasta en horas punta.</p>
+                            <p>En la foto, se puede ver el local de Chamberí en 1999, dos años después de su inauguración.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-flex">
+                        <div class="w-100 align-self-stretch">
+                            <img src="images/los90.jpg" alt="Local de Chamberí en 1999" class="img-fluid rounded w-100 h-100" style="object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Video arriba, texto abajo (solo en móvil) -->
+            <section class="mb-5 pb-5">
+                <h2 class="text-center mb-5">Nuestro Chef en Acción</h2>
+                <div class="row align-items-center d-lg-none">
+                    <!-- Video arriba - Solo visible en móvil -->
+                    <div class="col-12 mb-4">
+                        <div class="ratio ratio-16x9">
+                            <video id="video2" class="video-item" controls muted playsinline preload="metadata">
+                                <source src="images/videochef.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Texto abajo - Solo visible en móvil -->
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3>El Arte de Cocinar</h3>
+                            <p>En este video, nuestro chef ejecutivo, Carlos Martínez, prepara uno de nuestros platos estrella: el solomillo al oporto con puré de patatas trufado.</p>
+                            <p>Carlos, con más de 15 años de experiencia en restaurantes Michelin, ha desarrollado una técnica única que combina tradición e innovación.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-award-fill text-warning me-2"></i>Premios</h5>
+                                            <p class="card-text">3 Soles Repsol, Mejor Chef Joven 2018</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-clock-fill text-primary me-2"></i>Experiencia</h5>
+                                            <p class="card-text">15 años en alta cocina española</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-book-fill text-success me-2"></i>Especialidad</h5>
+                                            <p class="card-text">Cocina tradicional reinventada</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Versión para pantallas grandes: Video y texto lado a lado -->
+                <div class="row align-items-center d-none d-lg-flex">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="ratio ratio-16x9">
+                            <video id="video2-lg" class="video-item" controls muted playsinline preload="metadata">
+                                <source src="images/videochef.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ps-lg-4">
+                            <h3>El Arte de Cocinar</h3>
+                            <p>En este video, nuestro chef ejecutivo, Carlos Martínez, prepara uno de nuestros platos estrella: el solomillo al oporto con puré de patatas trufado.</p>
+                            <p>Carlos, con más de 15 años de experiencia en restaurantes Michelin, ha desarrollado una técnica única que combina tradición e innovación.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-award-fill text-warning me-2"></i>Premios</h5>
+                                            <p class="card-text">3 Soles Repsol, Mejor Chef Joven 2018</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-clock-fill text-primary me-2"></i>Experiencia</h5>
+                                            <p class="card-text">15 años en alta cocina española</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-book-fill text-success me-2"></i>Especialidad</h5>
+                                            <p class="card-text">Cocina tradicional reinventada</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 4: Video arriba, texto abajo (solo en móvil) -->
+            <section class="mb-5">
+                <h2 class="text-center mb-5">Nuestros Productos</h2>
+                <div class="row align-items-center d-lg-none">
+                    <!-- Video arriba - Solo visible en móvil -->
+                    <div class="col-12 mb-4">
+                        <div class="ratio ratio-16x9">
+                            <video id="video1" class="video-item" controls muted playsinline preload="metadata">
+                                <source src="images/videochef.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Texto abajo - Solo visible en móvil -->
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h3>Calidad y Origen</h3>
+                            <p>Utilizamos solo ingredientes de primera calidad, provenientes de proveedores locales y sostenibles. Creemos que la base de un buen plato está en la calidad de sus ingredientes.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-geo-alt-fill text-danger me-2"></i>Productos Locales</h5>
+                                    <p>El 80% de nuestros productos provienen de menos de 100km de distancia. Trabajamos directamente con agricultores y ganaderos de la comunidad.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-calendar-check-fill text-info me-2"></i>Temporalidad</h5>
+                                    <p>Nuestra carta cambia según la temporada para ofrecer siempre los productos en su mejor momento de consumo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Versión para pantallas grandes: Video y texto lado a lado -->
+                <div class="row align-items-center d-none d-lg-flex">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="ratio ratio-16x9">
+                            <video id="video1" class="video-item" controls muted playsinline preload="metadata">
+                                <source src="images/videochef.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ps-lg-4">
+                            <h3>Calidad y Origen</h3>
+                            <p>Utilizamos solo ingredientes de primera calidad, provenientes de proveedores locales y sostenibles. Creemos que la base de un buen plato está en la calidad de sus ingredientes.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-geo-alt-fill text-danger me-2"></i>Productos Locales</h5>
+                                    <p>El 80% de nuestros productos provienen de menos de 100km de distancia. Trabajamos directamente con agricultores y ganaderos de la comunidad.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-calendar-check-fill text-info me-2"></i>Temporalidad</h5>
+                                    <p>Nuestra carta cambia según la temporada para ofrecer siempre los productos en su mejor momento de consumo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Información adicional -->
+            <section class="mt-5 pt-5">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="bi bi-people-fill me-2"></i>Nuestro Equipo</h4>
+                                <p>Contamos con un equipo de 20 profesionales apasionados por la gastronomía, desde cocineros hasta camareros, todos con formación especializada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="bi bi-heart-fill me-2"></i>Compromiso Social</h4>
+                                <p>Colaboramos con bancos de alimentos locales y participamos en programas de formación para jóvenes chefs en situación vulnerable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="bi bi-recycle-fill me-2"></i>Sostenibilidad</h4>
+                                <p>Implementamos prácticas eco-friendly: reducción de plásticos, reciclaje integral y eficiencia energética en todas nuestras instalaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Banner para móviles -->
+    <div class="mobile-banner d-block d-sm-none">
+        <div class="container">
+            <div class="banner-content">
+                <span>🎥 Videos disponibles - Toca para ver nuestra historia</span>
+                <button class="btn-close-banner" id="closeBannerBtn">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 La Taberna del Ayer. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="politica-privacidad.html" class="text-white text-decoration-none">Política de Privacidad</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Script de cookies -->
+    <script src="js/cookies.js"></script>
+    <!-- Script propio -->
+    <script src="js/script.js"></script>
 </body>
-
 </html>
