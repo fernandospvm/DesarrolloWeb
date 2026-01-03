@@ -303,38 +303,16 @@ function inicializarBannerPromocional() {
     
     if (!banner || !btnCerrar) return;
     
-    // Verificar si ya se cerró el banner (usando localStorage)
-    const bannerCerrado = localStorage.getItem('bannerPromocionalCerrado');
-    
-    // Mostrar banner solo si no está cerrado
-    if (bannerCerrado !== 'true') {
-        banner.style.display = 'block';
-        
-        // En móviles, asegurar que esté en la parte inferior
-        if (window.innerWidth <= 575.98) {
-            banner.classList.remove('banner-posicion-top');
-            banner.classList.add('banner-posicion-bottom');
-        }
-    } else {
-        banner.style.display = 'none';
-    }
     
     // Evento para cerrar el banner
     btnCerrar.addEventListener('click', function() {
         banner.style.display = 'none';
-        localStorage.setItem('bannerPromocionalCerrado', 'true');
     });
     
     // Ajustar posición del banner al cambiar tamaño de ventana
     window.addEventListener('resize', function() {
         if (!banner || banner.style.display === 'none') return;
         
-        if (window.innerWidth <= 575.98) {
-            banner.classList.remove('banner-posicion-top');
-            banner.classList.add('banner-posicion-bottom');
-        } else {
-            banner.classList.remove('banner-posicion-bottom');
-            banner.classList.add('banner-posicion-top');
-        }
+        
     });
 }

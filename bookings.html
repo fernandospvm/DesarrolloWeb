@@ -229,165 +229,30 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body p-4">
-                            <h2 class="mb-4 text-center">Contacto</h2>
-
-                            <form id="formContacto" novalidate method="POST" action="https://postman-echo.com/post">
-                                <!-- Nombre con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="contactoNombre" name="nombre" placeholder=" " required>
-                                    <label for="contactoNombre">Nombre*</label>
-                                    <div class="invalid-feedback">
-                                        Introduce tu nombre
-                                    </div>
-                                </div>
-
-                                <!-- Email con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="contactoEmail" name="email" placeholder=" " required>
-                                    <label for="contactoEmail">Email*</label>
-                                    <div class="invalid-feedback">
-                                        Email no válido
-                                    </div>
-                                </div>
-
-                                <!-- Teléfono con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="contactoTelefono" name="telefono" placeholder=" " required>
-                                    <label for="contactoTelefono">Teléfono*</label>
-                                    <div class="invalid-feedback">
-                                        Introduce tu teléfono
-                                    </div>
-                                </div>
-
-                                <!-- Asunto con Floating Label -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="contactoAsunto" name="asunto" placeholder=" " required>
-                                    <label for="contactoAsunto">Asunto*</label>
-                                    <div class="invalid-feedback">
-                                        Introduce un asunto
-                                    </div>
-                                </div>
-
-                                <!-- Mensaje con Floating Label -->
-                                <div class="form-floating mb-4">
-                                    <textarea class="form-control" id="contactoMensaje" name="mensaje" placeholder=" " rows="4" style="height: 120px;" required></textarea>
-                                    <label for="contactoMensaje">Mensaje*</label>
-                                    <div class="invalid-feedback">
-                                        Escribe tu mensaje
-                                    </div>
-                                </div>
-
-                                <!-- Botón -->
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-dark btn-lg">
-                                        <i class="bi bi-send me-2"></i>
-                                        Enviar mensaje
-                                    </button>
-                                </div>
-                            </form>
-
-                            <!-- Mensaje éxito -->
-                            <div id="mensajeContacto" class="alert alert-success mt-4 d-none">
-                                Mensaje enviado correctamente 📩
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Información de Contacto y Mapa -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <!-- Datos de contacto -->
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="mb-4">Datos de contacto</h2>
-                    
-                    <div class="card shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="avatar-circle bg-dark text-white d-flex align-items-center justify-content-center me-3">
-                                    FV
-                                </div>
-                                <div>
-                                    <h5 class="mb-1">Fernando San Prudencio Villanueva</h5>
-                                    <p class="text-muted mb-0">Desarrollador de la página</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-info">
-                                <p class="mb-2">
-                                    <i class="bi bi-envelope-fill me-2 text-primary"></i>
-                                    fernando.spv@gmail.com
-                                </p>
-                                <p class="mb-2">
-                                    <i class="bi bi-telephone-fill me-2 text-primary"></i>
-                                    +34 689 16 04 82
-                                </p>
-                                <p class="mb-0">
-                                    <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
-                                    Universidad Francisco de Vitoria, Carretera de Majadahonda, km 1,800, Pozuelo de Alarcón.
-                                </p>
-                            </div>
-                            
-                            <div class="mt-4">
-                                <h6>Justificación del tema:</h6>
-                                <p class="text-muted">
-                                    Elegí un restaurante como tema porque permite mostrar una variedad de elementos web: 
-                                    reservas online, menús interactivos, galerías de comida, y sistemas de contacto. 
-                                    Además, es un sector donde la experiencia de usuario es crucial tanto en desktop como en móvil.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mapa -->
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Dónde estamos</h2>
-                    
-                    <div class="card shadow-sm mb-4">
-                        <div class="card-body p-0">
-                            <div class="ratio ratio-16x9">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2498.8707966393968!2d-3.8366278891974037!3d40.439800271316734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4185d02b000001%3A0x9b035d2695ce702c!2sUniversidad%20Francisco%20de%20Vitoria.%20Universidad%20Privada%20en%20Madrid.!5e1!3m2!1ses!2ses!4v1767353319144!5m2!1ses!2ses"
-                                    style="border:0;"
-                                    allowfullscreen
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
                     
                     <!-- Horario -->
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="mb-3">
-                                <i class="bi bi-clock-fill me-2 text-primary"></i>
-                                Horario
-                            </h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <strong>Lunes - Jueves:</strong> 13:00 - 16:00 / 20:00 - 00:00
-                                </li>
-                                <li class="mb-2">
-                                    <strong>Viernes - Sábado:</strong> 13:00 - 16:00 / 20:00 - 01:00
-                                </li>
-                                <li>
-                                    <strong>Domingo:</strong> 13:00 - 17:00
-                                </li>
-                            </ul>
-                        </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">
+                            <i class="bi bi-clock-fill me-2 text-primary"></i>
+                            Horario
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Lunes - Jueves:</strong> 13:00 - 16:00 / 20:00 - 00:00
+                            </li>
+                            <li class="mb-2">
+                                <strong>Viernes - Sábado:</strong> 13:00 - 16:00 / 20:00 - 01:00
+                            </li>
+                            <li>
+                                <strong>Domingo:</strong> 13:00 - 17:00
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

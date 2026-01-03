@@ -126,7 +126,7 @@ footer a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 12rem 1.5rem;
     color: white;
     z-index: 2;
     max-width: 100%;
@@ -397,6 +397,8 @@ main {
     
     /* Estilos específicos para los videos de about.html */
     .video-item {
+        width: 100%;
+        object-fit: cover;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
