@@ -831,3 +831,7 @@ main {
     object-fit: cover;
     object-position: center;
 }
+/* Altura del bloque de información */
+.card-contacto {
+    min-height: 660px; /* ajusta a gusto */
+}
