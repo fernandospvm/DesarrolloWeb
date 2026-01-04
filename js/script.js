@@ -232,67 +232,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========================
-    // VERIFICAR COOKIES AL CARGAR FORMULARIOS
-    // ========================
-    // Si no hay cookies aceptadas, deshabilitar formularios
-    /* COMENTADO SEGÚN SOLICITUD
-    if (getCookie('aceptar_cookie') !== '1') {
-        // Deshabilitar formularios hasta aceptar cookies
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.title = "Acepte las cookies para enviar el formulario";
-                submitBtn.style.opacity = "0.6";
-            }
-        });
-    } else {
-        // Habilitar formularios si las cookies están aceptadas
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.title = "";
-                submitBtn.style.opacity = "1";
-            }
-        });
-    }
-    */
-
-    // ========================
     // BANNER PROMOCIONAL (about.html)
     // ========================
     inicializarBannerPromocional();
 });
 
-// ========================
-// FUNCIONES PARA MANEJAR COOKIES (compatibilidad)
-// ========================
-/* COMENTADO SEGÚN SOLICITUD
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-        expires += "; SameSite=L";
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
-
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-*/
 
 // ========================
 // BANNER PROMOCIONAL NUEVO
