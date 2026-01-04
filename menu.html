@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!--Iconos de bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Archivo CSS externo -->
     <link rel="stylesheet" href="css/styles.css">
@@ -31,17 +31,16 @@
         </div>
     </div>
 
-    <!-- Modal para Lightbox -->
-    <div class="modal fade lightbox-modal" id="lightboxModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-body text-center p-0">
-                    <img id="lightboxImage" src="" alt="" class="lightbox-img">
-                    <div class="lightbox-caption">
-                        <h5 id="lightboxTitle"></h5>
-                        <p id="lightboxDescription"></p>
-                    </div>
-                </div>
+    <!-- Galería JavaScript puro (Lightbox) -->
+    <div id="galeriaJS" class="galeria-js-overlay">
+        <div class="galeria-js-contenedor">
+            <div class="galeria-js-cerrar" id="cerrarGaleriaJS" tabindex="0" aria-label="Cerrar galería">✕</div>
+            <div class="galeria-js-imagen-container">
+                <img id="galeriaJSImagen" src="" alt="" class="galeria-js-imagen">
+            </div>
+            <div class="galeria-js-info">
+                <h4 id="galeriaJSTitulo"></h4>
+                <p id="galeriaJSDescripcion"></p>
             </div>
         </div>
     </div>
@@ -104,8 +103,8 @@
     <!-- Título principal -->
     <section class="hero-title text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold text-dark">Carta</h1>
-            <p class="lead text-muted">Descubre los sabores tradicionales que han conquistado Madrid desde 1923</p>
+            <h1 class="display-4 fw-bold">Carta</h1>
+            <p>Descubre los sabores tradicionales que han conquistado Madrid desde 1923</p>
         </div>
     </section>
 
@@ -121,10 +120,7 @@
                 <!-- Plato 1: Solomillo de Ternera -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/solomillo.jpg" alt="Solomillo de Ternera" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Solomillo de Ternera a la Pimienta" 
-                             data-description="Jugoso solomillo de ternera gallega a la parrilla con salsa de pimienta verde, acompañado de patatas panaderas y pimientos asados de la huerta madrileña. Un clásico reinventado.">
+                        <img src="images/solomillo.jpg" alt="Solomillo de Ternera" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Solomillo de Ternera a la Pimienta</h5>
                             <p>Jugoso solomillo a la parrilla con patatas panaderas y salsa de pimienta verde</p>
@@ -138,10 +134,7 @@
                 <!-- Plato 2: Dorada a la Espalda -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/dorada.jpg" alt="Dorada a la Espalda" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Dorada a la Espalda" 
-                             data-description="Dorada fresca del Mediterráneo, cocinada a la espalda con sal gruesa y acompañada de verduras asadas de temporada. Técnica tradicional que realza todo el sabor del pescado.">
+                        <img src="images/dorada.jpg" alt="Dorada a la Espalda" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Dorada a la Espalda</h5>
                             <p>Pescado fresco con sal gruesa y verduras asadas de temporada</p>
@@ -155,10 +148,7 @@
                 <!-- Plato 3: Paella Mixta -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/paella.jpg" alt="Paella Mixta" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Paella Valenciana" 
-                             data-description="Auténtica paella valenciana con pollo, conejo, garrofón, judía verde y azafrán. Elaborada en paellera de hierro sobre fuego de leña, siguiendo la receta tradicional.">
+                        <img src="images/paella.jpg" alt="Paella Mixta" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Paella Valenciana</h5>
                             <p>Para 2-3 personas. Pollo, conejo y verduras de la huerta</p>
@@ -172,10 +162,7 @@
                 <!-- Plato 4: Jamón Ibérico -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/jamon.jpg" alt="Jamón Ibérico" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Jamón Ibérico de Bellota" 
-                             data-description="Finas lonchas de jamón 100% ibérico de bellota de Jabugo, cortado a cuchillo en el momento por nuestro maestro cortador. Acompañado de pan con tomate y aceite de oliva virgen extra.">
+                        <img src="images/jamon.jpg" alt="Jamón Ibérico" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Jamón Ibérico de Bellota</h5>
                             <p>100% ibérico de bellota de Jabugo, cortado a cuchillo</p>
@@ -189,10 +176,7 @@
                 <!-- Plato 5: Tarta de Queso -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/cheesecake.jpg" alt="Tarta de Queso" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Tarta de Queso Casera" 
-                             data-description="Tarta de queso al horno con base de galleta casera de mantequilla. Elaborada con queso crema de la zona y cubierta con mermelada de frutos rojos de temporada. Un postre que nunca falta en nuestra carta.">
+                        <img src="images/cheesecake.jpg" alt="Tarta de Queso" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Tarta de Queso Casera</h5>
                             <p>Al horno con base de galleta y mermelada de frutos rojos</p>
@@ -206,10 +190,7 @@
                 <!-- Plato 6: Merluza en Salsa Verde -->
                 <div class="col-lg-4 col-md-6 galeria-item">
                     <div class="card border-0 shadow-sm h-100">
-                        <img src="images/merluza.jpg" alt="Merluza en Salsa Verde" class="galeria-img" 
-                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                             data-title="Merluza en Salsa Verde" 
-                             data-description="Lomos de merluza del Cantábrico en salsa verde con almejas y espárragos trigueros. Un clásico de la cocina vasca que hemos adoptado como propio, respetando la receta tradicional.">
+                        <img src="images/merluza.jpg" alt="Merluza en Salsa Verde" class="galeria-img">
                         <div class="pie-foto">
                             <h5>Merluza en Salsa Verde</h5>
                             <p>Con almejas y espárragos trigueros. Clásico vasco</p>
@@ -519,7 +500,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Script de cookies -->

@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========================
+    // GALERÍA JAVASCRIPT PURO
+    // ========================
+    inicializarGaleriaJS();
+    
+    // ========================
     // BANNER MÓVIL
     // ========================
     const closeBannerBtn = document.getElementById('closeBannerBtn');
@@ -57,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Envío del formulario
+        // Envío del formulario - AQUÍ MODIFICAMOS CSS CON JS
         formReserva.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -67,8 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // 1. Primero validamos normalmente
             if (!formReserva.checkValidity()) {
+                // 2. Añadir clase de Bootstrap (como ya hacíamos)
                 formReserva.classList.add('was-validated');
+                
+                // 3. AHORA MODIFICAMOS CSS CON JAVASCRIPT (REQUISITO)
+                modificarCSSconJS(formReserva);
+                
                 return;
             }
             
@@ -89,9 +100,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 5000);
                 }
                 
-                // Resetear formulario
+                // Resetear formulario y limpiar estilos JS
                 formReserva.reset();
                 formReserva.classList.remove('was-validated');
+                limpiarCSSconJS(formReserva);
                 
                 // Guardar datos del formulario en cookies (opcional)
                 setCookie('ultima_reserva', new Date().toISOString(), 30);
@@ -117,8 +129,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // 1. Primero validamos normalmente
             if (!formContacto.checkValidity()) {
+                // 2. Añadir clase de Bootstrap (como ya hacíamos)
                 formContacto.classList.add('was-validated');
+                
+                // 3. AHORA MODIFICAMOS CSS CON JAVASCRIPT (REQUISITO)
+                modificarCSSconJS(formContacto);
+                
                 return;
             }
             
@@ -139,36 +157,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 5000);
                 }
                 
-                // Resetear formulario
+                // Resetear formulario y limpiar estilos JS
                 formContacto.reset();
                 formContacto.classList.remove('was-validated');
+                limpiarCSSconJS(formContacto);
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo.');
             });
-        });
-    }
-
-    // ========================
-    // LIGHTBOX PARA GALERÍA DE PLATOS
-    // ========================
-    const lightboxModal = document.getElementById('lightboxModal');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxDescription = document.getElementById('lightboxDescription');
-    
-    if (lightboxModal) {
-        lightboxModal.addEventListener('show.bs.modal', function(event) {
-            const button = event.relatedTarget;
-            const imageSrc = button.querySelector('img').src;
-            const title = button.getAttribute('data-title');
-            const description = button.getAttribute('data-description');
-            
-            lightboxImage.src = imageSrc;
-            lightboxImage.alt = title;
-            lightboxTitle.textContent = title;
-            lightboxDescription.textContent = description;
         });
     }
     
@@ -237,6 +234,126 @@ document.addEventListener('DOMContentLoaded', function() {
     inicializarBannerPromocional();
 });
 
+// ========================
+// FUNCIONES PARA GALERÍA JS PURO
+// ========================
+
+function inicializarGaleriaJS() {
+    const galeriaOverlay = document.getElementById('galeriaJS');
+    const galeriaImagen = document.getElementById('galeriaJSImagen');
+    const galeriaTitulo = document.getElementById('galeriaJSTitulo');
+    const galeriaDescripcion = document.getElementById('galeriaJSDescripcion');
+    const cerrarBtn = document.getElementById('cerrarGaleriaJS');
+    const imagenes = document.querySelectorAll('.galeria-img');
+    
+    // Si no hay galería en esta página, salir
+    if (!galeriaOverlay) return;
+    
+    // Función para abrir la galería
+    function abrirGaleria(imgSrc, titulo, descripcion) {
+        if (!galeriaImagen || !galeriaTitulo || !galeriaDescripcion) return;
+        
+        galeriaImagen.src = imgSrc;
+        galeriaImagen.alt = titulo;
+        galeriaTitulo.textContent = titulo;
+        galeriaDescripcion.textContent = descripcion;
+        galeriaOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevenir scroll
+    }
+    
+    // Función para cerrar la galería
+    function cerrarGaleria() {
+        galeriaOverlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restaurar scroll
+    }
+    
+    // 1. Asignar eventos a cada imagen de la galería
+    imagenes.forEach(img => {
+        img.addEventListener('click', function() {
+            const card = this.closest('.galeria-item');
+            if (card) {
+                const titulo = card.querySelector('.pie-foto h5')?.textContent || 'Plato';
+                const descripcion = card.querySelector('.pie-foto p')?.textContent || 'Descripción del plato';
+                abrirGaleria(this.src, titulo, descripcion);
+            }
+        });
+    });
+    
+    // 2. Cerrar con el botón X
+    if (cerrarBtn) {
+        cerrarBtn.addEventListener('click', cerrarGaleria);
+        // Accesibilidad: cerrar con Enter
+        cerrarBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                cerrarGaleria();
+            }
+        });
+    }
+    
+    // 3. Cerrar haciendo clic fuera de la imagen
+    galeriaOverlay.addEventListener('click', function(e) {
+        if (e.target === galeriaOverlay) {
+            cerrarGaleria();
+        }
+    });
+    
+    // 4. Cerrar con la tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && galeriaOverlay.style.display === 'flex') {
+            cerrarGaleria();
+        }
+    });
+}
+
+// ========================
+// FUNCIONES PARA VALIDACIÓN CON MODIFICACIÓN DE CSS MEDIANTE JS
+// ========================
+
+function modificarCSSconJS(formulario) {
+    // Obtener todos los campos inválidos
+    const camposInvalidos = formulario.querySelectorAll(':invalid');
+    
+    // Para cada campo inválido, MODIFICAR CSS CON JAVASCRIPT
+    camposInvalidos.forEach(campo => {
+        // SOLO CAMBIAR EL COLOR - nada de animaciones
+        campo.style.borderColor = '#dc3545'; // Rojo Bootstrap, aplicado con JS
+        
+        // También cambiar el color del label
+        const label = formulario.querySelector(`label[for="${campo.id}"]`);
+        if (label) {
+            label.style.color = '#dc3545'; // MODIFICADO CON JS
+        }
+        
+        // Cambiar color del mensaje de error
+        const mensajeError = campo.nextElementSibling;
+        if (mensajeError && mensajeError.classList.contains('invalid-feedback')) {
+            mensajeError.style.display = 'block';
+            mensajeError.style.color = '#dc3545'; // MODIFICADO CON JS
+        }
+    });
+}
+
+function limpiarCSSconJS(formulario) {
+    // Limpiar todos los estilos aplicados con JS
+    const todosCampos = formulario.querySelectorAll('input, textarea, select');
+    
+    todosCampos.forEach(campo => {
+        // Restaurar color original del borde
+        campo.style.borderColor = '';
+        
+        // Restaurar color del label
+        const label = formulario.querySelector(`label[for="${campo.id}"]`);
+        if (label) {
+            label.style.color = '';
+        }
+        
+        // Ocultar mensaje de error
+        const mensajeError = campo.nextElementSibling;
+        if (mensajeError && mensajeError.classList.contains('invalid-feedback')) {
+            mensajeError.style.display = 'none';
+        }
+    });
+}
 
 // ========================
 // BANNER PROMOCIONAL NUEVO
@@ -247,7 +364,6 @@ function inicializarBannerPromocional() {
     
     if (!banner || !btnCerrar) return;
     
-    
     // Evento para cerrar el banner
     btnCerrar.addEventListener('click', function() {
         banner.style.display = 'none';
@@ -256,7 +372,5 @@ function inicializarBannerPromocional() {
     // Ajustar posición del banner al cambiar tamaño de ventana
     window.addEventListener('resize', function() {
         if (!banner || banner.style.display === 'none') return;
-        
-        
     });
 }
