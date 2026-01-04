@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carta</title>
+    <title>Carta - La Taberna del Ayer</title>
 
     <!--Icono de pestaña-->
     <link rel="icon" href="images/logo.jpg" type="image/x-icon">
 
-
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!--Iconos de bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
@@ -106,13 +105,149 @@
     <section class="hero-title text-center py-5">
         <div class="container">
             <h1 class="display-4 fw-bold text-dark">Carta</h1>
-            <p class="lead text-muted">Consulta nuestra carta para hoy!</p>
+            <p class="lead text-muted">Descubre los sabores tradicionales que han conquistado Madrid desde 1923</p>
         </div>
     </section>
 
-    <!-- Índice del menú -->
-    <main class="menu-index py-5">
+    <!-- GALERÍA DE PLATOS (AHORA PRIMERO) -->
+    <section class="galeria-platos py-5">
         <div class="container">
+            <h2 class="text-center mb-5">
+                <i class="bi bi-camera-fill me-2"></i>
+                Nuestros Platos Estrella
+            </h2>
+            
+            <div class="row">
+                <!-- Plato 1: Solomillo de Ternera -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/solomillo.jpg" alt="Solomillo de Ternera" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Solomillo de Ternera a la Pimienta" 
+                             data-description="Jugoso solomillo de ternera gallega a la parrilla con salsa de pimienta verde, acompañado de patatas panaderas y pimientos asados de la huerta madrileña. Un clásico reinventado.">
+                        <div class="pie-foto">
+                            <h5>Solomillo de Ternera a la Pimienta</h5>
+                            <p>Jugoso solomillo a la parrilla con patatas panaderas y salsa de pimienta verde</p>
+                            <div class="text-end">
+                                <span class="precio">24,50€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 2: Dorada a la Espalda -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/dorada.jpg" alt="Dorada a la Espalda" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Dorada a la Espalda" 
+                             data-description="Dorada fresca del Mediterráneo, cocinada a la espalda con sal gruesa y acompañada de verduras asadas de temporada. Técnica tradicional que realza todo el sabor del pescado.">
+                        <div class="pie-foto">
+                            <h5>Dorada a la Espalda</h5>
+                            <p>Pescado fresco con sal gruesa y verduras asadas de temporada</p>
+                            <div class="text-end">
+                                <span class="precio">19,90€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 3: Paella Mixta -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/paella.jpg" alt="Paella Mixta" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Paella Valenciana" 
+                             data-description="Auténtica paella valenciana con pollo, conejo, garrofón, judía verde y azafrán. Elaborada en paellera de hierro sobre fuego de leña, siguiendo la receta tradicional.">
+                        <div class="pie-foto">
+                            <h5>Paella Valenciana</h5>
+                            <p>Para 2-3 personas. Pollo, conejo y verduras de la huerta</p>
+                            <div class="text-end">
+                                <span class="precio">38,00€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 4: Jamón Ibérico -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/jamon.jpg" alt="Jamón Ibérico" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Jamón Ibérico de Bellota" 
+                             data-description="Finas lonchas de jamón 100% ibérico de bellota de Jabugo, cortado a cuchillo en el momento por nuestro maestro cortador. Acompañado de pan con tomate y aceite de oliva virgen extra.">
+                        <div class="pie-foto">
+                            <h5>Jamón Ibérico de Bellota</h5>
+                            <p>100% ibérico de bellota de Jabugo, cortado a cuchillo</p>
+                            <div class="text-end">
+                                <span class="precio">16,80€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 5: Tarta de Queso -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/cheesecake.jpg" alt="Tarta de Queso" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Tarta de Queso Casera" 
+                             data-description="Tarta de queso al horno con base de galleta casera de mantequilla. Elaborada con queso crema de la zona y cubierta con mermelada de frutos rojos de temporada. Un postre que nunca falta en nuestra carta.">
+                        <div class="pie-foto">
+                            <h5>Tarta de Queso Casera</h5>
+                            <p>Al horno con base de galleta y mermelada de frutos rojos</p>
+                            <div class="text-end">
+                                <span class="precio">6,50€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plato 6: Merluza en Salsa Verde -->
+                <div class="col-lg-4 col-md-6 galeria-item">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="images/merluza.jpg" alt="Merluza en Salsa Verde" class="galeria-img" 
+                             data-bs-toggle="modal" data-bs-target="#lightboxModal" 
+                             data-title="Merluza en Salsa Verde" 
+                             data-description="Lomos de merluza del Cantábrico en salsa verde con almejas y espárragos trigueros. Un clásico de la cocina vasca que hemos adoptado como propio, respetando la receta tradicional.">
+                        <div class="pie-foto">
+                            <h5>Merluza en Salsa Verde</h5>
+                            <p>Con almejas y espárragos trigueros. Clásico vasco</p>
+                            <div class="text-end">
+                                <span class="precio">22,90€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="row mt-5">
+                <div class="col-md-8 mx-auto">
+                    <div class="alert alert-info">
+                        <h5 class="alert-heading">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Sobre nuestros platos
+                        </h5>
+                        <p class="mb-0">
+                            Todas nuestras fotografías son reales y muestran exactamente lo que recibirás en tu mesa. 
+                            Utilizamos ingredientes frescos de temporada y técnicas tradicionales que han pasado de generación en generación. 
+                            Las imágenes pueden variar ligeramente según disponibilidad del mercado, pero la calidad siempre está garantizada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Índice del menú (AHORA DESPUÉS) -->
+    <main class="menu-index py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">
+                <i class="bi bi-menu-button-wide me-2"></i>
+                Nuestra Carta Completa
+            </h2>
+            
             <ul class="list-group list-group-flush">
                 <!-- MENÚ DEL DÍA -->
                 <li class="list-group-item">
@@ -123,27 +258,31 @@
                         <i class="bi bi-chevron-down" id="flecha-menu-dia"></i>
                     </button>
 
-                    <strong>Menú del día - 12€</strong>
+                    <strong>Menú del día - 15€ (IVA incluido)</strong>
 
                     <ul class="mt-2 collapse show" id="menu-dia">
                         <li><strong>Primeros a elegir:</strong>
                             <ul>
-                                <li>Macarrones con tomate</li>
-                                <li>Sopa de pollo con fideos</li>
+                                <li>Lentejas tradicionales con chorizo y morcilla</li>
+                                <li>Sopa castellana con pan tostado y huevo escalfado</li>
+                                <li>Ensalada de la huerta con ventresca y pimientos asados</li>
                             </ul>
                         </li>
                         <li><strong>Segundos platos:</strong>
                             <ul>
-                                <li>Filete con patatas</li>
-                                <li>Merluza en salsa verde</li>
+                                <li>Carrillera de ternera estofada con puré de patata</li>
+                                <li>Merluza en salsa verde con almejas y guisantes</li>
+                                <li>Pollo al ajillo con patatas panaderas</li>
                             </ul>
                         </li>
                         <li><strong>Postres:</strong>
                             <ul>
-                                <li>Fruta de temporada</li>
-                                <li>Helado de sabores (consultar al camarero sabores disponibles)</li>
+                                <li>Arroz con leche casero</li>
+                                <li>Fruta de temporada de cultivo local</li>
+                                <li>Flan de huevo tradicional</li>
                             </ul>
                         </li>
+                        <li><strong>Incluye:</strong> Pan, bebida (agua, vino o cerveza) y café</li>
                     </ul>
                 </li>
 
@@ -157,8 +296,11 @@
                     </button>
                     <strong>Para compartir</strong>
                     <ul class="mt-2 collapse show" id="entrantes">
-                        <li>Plato de jamón ibérico</li>
-                        <li>Ensaladilla rusa</li>
+                        <li>Tabla de ibéricos (jamón, lomo, chorizo, salchichón) - 18,50€</li>
+                        <li>Ensaladilla rusa tradicional - 8,90€</li>
+                        <li>Croquetas caseras de jamón ibérico (6 unidades) - 9,50€</li>
+                        <li>Queso manchego curado con membrillo - 11,90€</li>
+                        <li>Anchoas del Cantábrico con pimientos - 12,50€</li>
                     </ul>
                 </li>
 
@@ -174,19 +316,25 @@
                     <ul class="mt-2 collapse show" id="platos-principales">
                         <li><strong>Carne</strong>
                             <ul>
-                                <li>Solomillo de ternera</li>
-                                <li>Pollo al horno</li>
+                                <li>Solomillo de ternera a la pimienta con patatas bravas - 24,50€</li>
+                                <li>Cochinillo asado al estilo segoviano - 22,90€</li>
+                                <li>Cordero lechal al horno con patatas - 21,50€</li>
+                                <li>Callos a la madrileña - 16,90€</li>
                             </ul>
                         </li>
                         <li><strong>Pescados</strong>
                             <ul>
-                                <li>Dorada a la espalda</li>
-                                <li>Lubina al horno</li>
+                                <li>Dorada a la espalda con sal gruesa - 19,90€</li>
+                                <li>Lubina al horno con hierbas aromáticas - 20,50€</li>
+                                <li>Bacalao al pil-pil - 18,90€</li>
+                                <li>Rape a la marinera - 22,50€</li>
                             </ul>
                         </li>
-                        <li><strong>Otros</strong>
+                        <li><strong>Especialidades de la casa</strong>
                             <ul>
-                                <li>Paella mixta</li>
+                                <li>Cocido madrileño completo - 23,50€</li>
+                                <li>Paella valenciana (para 2 personas) - 38,00€</li>
+                                <li>Fabada asturiana - 17,90€</li>
                             </ul>
                         </li>
                     </ul>
@@ -202,8 +350,12 @@
                     </button>
                     <strong>Postres</strong>
                     <ul class="mt-2 collapse show" id="postres">
-                        <li>Tarta de queso</li>
-                        <li>Flan casero</li>
+                        <li>Tarta de queso casera al horno - 6,50€</li>
+                        <li>Flan de huevo tradicional - 5,90€</li>
+                        <li>Natillas caseras con galleta - 5,50€</li>
+                        <li>Crema catalana - 6,20€</li>
+                        <li>Helado artesanal (3 bolas) - 5,90€</li>
+                        <li>Selección de quesos españoles - 11,90€</li>
                     </ul>
                 </li>
 
@@ -215,196 +367,64 @@
                             aria-expanded="true">
                         <i class="bi bi-chevron-down"></i>
                     </button>
-                    <strong>Bebidas y demás</strong>
+                    <strong>Bebidas y vinos</strong>
                     <ul class="mt-2 collapse show" id="bebidas">
-                        <li>Cerveza - 2,50€</li>
-                        <li><strong>Vinos</strong>
+                        <li>Cerveza Mahou (caña) - 2,50€</li>
+                        <li>Cerveza artesanal (botellín) - 3,50€</li>
+                        <li><strong>Vinos por copa</strong>
                             <ul>
                                 <li><strong>Tinto</strong>
                                     <ul>
-                                        <li>Ribera del Duero
-                                            <ul>
-                                                <li>Copa</li>
-                                                <li>Botella 70cl</li>
-                                            </ul>
-                                        </li>
-                                        <li>Rioja
-                                            <ul>
-                                                <li>Copa</li>
-                                                <li>Botella 70cl</li>
-                                            </ul>
-                                        </li>
+                                        <li>Rioja Crianza - 4,50€</li>
+                                        <li>Ribera del Duero - 5,00€</li>
+                                        <li>Priorat - 6,50€</li>
                                     </ul>
                                 </li>
                                 <li><strong>Blanco</strong>
                                     <ul>
-                                        <li>Albariño
-                                            <ul>
-                                                <li>Copa</li>
-                                                <li>Botella 70cl</li>
-                                            </ul>
-                                        </li>
-                                        <li>Verdejo
-                                            <ul>
-                                                <li>Copa</li>
-                                                <li>Botella 70cl</li>
-                                            </ul>
-                                        </li>
+                                        <li>Albariño - 4,80€</li>
+                                        <li>Verdejo - 4,20€</li>
+                                        <li>Chardonnay - 5,50€</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Rosado</strong>
+                                    <ul>
+                                        <li>Navarra - 4,00€</li>
+                                        <li>Rioja - 4,30€</li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li>Refrescos - Consultar a personal disponibilidad</li>
-                        <li>Botella de agua 1L</li>
+                        <li><strong>Vinos por botella</strong>
+                            <ul>
+                                <li>Rioja Reserva - 22,00€</li>
+                                <li>Ribera del Duero Crianza - 24,50€</li>
+                                <li>Albariño - 19,90€</li>
+                                <li>Cava Brut Nature - 18,50€</li>
+                            </ul>
+                        </li>
+                        <li>Refrescos y agua - 2,50€</li>
+                        <li>Café e infusiones - 2,00€</li>
                     </ul>
                 </li>
             </ul>
 
-            <!-- GALERÍA DE PLATOS -->
-            <section class="galeria-platos">
-                <h2 class="text-center mb-5">
-                    <i class="bi bi-camera-fill me-2"></i>
-                    Nuestros Platos
-                </h2>
-                
-                <div class="row">
-                    <!-- Plato 1: Solomillo de Ternera -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/solomillo.jpg" alt="Solomillo de Ternera" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Solomillo de Ternera" 
-                                 data-description="Jugoso solomillo de ternera gallega a la parrilla, acompañado de patatas panaderas y pimientos asados.">
-                            <div class="pie-foto">
-                                <h5>Solomillo de Ternera</h5>
-                                <p>Jugoso solomillo a la parrilla con patatas panaderas</p>
-                                <div class="text-end">
-                                    <span class="precio">24,50€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Plato 2: Dorada a la Espalda -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/dorada.jpg" alt="Dorada a la Espalda" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Dorada a la Espalda" 
-                                 data-description="Dorada fresca del Mediterráneo, cocinada a la espalda con sal gruesa y acompañada de verduras asadas.">
-                            <div class="pie-foto">
-                                <h5>Dorada a la Espalda</h5>
-                                <p>Pescado fresco con sal gruesa y verduras asadas</p>
-                                <div class="text-end">
-                                    <span class="precio">19,90€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Plato 3: Paella Mixta -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/paella.jpg" alt="Paella Mixta" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Paella Mixta" 
-                                 data-description="Auténtica paella valenciana con pollo, conejo, marisco y verduras frescas. Elaborada en paellera de hierro.">
-                            <div class="pie-foto">
-                                <h5>Paella Mixta</h5>
-                                <p>Para 2-3 personas. Incluye pollo, conejo y marisco</p>
-                                <div class="text-end">
-                                    <span class="precio">38,00€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Plato 4: Jamón Ibérico -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/jamon.jpg" alt="Jamón Ibérico" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Jamón Ibérico de Bellota" 
-                                 data-description="Finas lonchas de jamón 100% ibérico de bellota, cortado a cuchillo en el momento. Acompañado de pan con tomate.">
-                            <div class="pie-foto">
-                                <h5>Jamón Ibérico</h5>
-                                <p>100% ibérico de bellota, cortado a cuchillo</p>
-                                <div class="text-end">
-                                    <span class="precio">16,80€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Plato 5: Tarta de Queso -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/cheesecake.jpg" alt="Tarta de Queso" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Tarta de Queso Casera" 
-                                 data-description="Tarta de queso al horno con base de galleta casera. Elaborada con queso crema de la zona y mermelada de frutos rojos.">
-                            <div class="pie-foto">
-                                <h5>Tarta de Queso</h5>
-                                <p>Casera al horno con mermelada de frutos rojos</p>
-                                <div class="text-end">
-                                    <span class="precio">6,50€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Plato 6: Merluza en Salsa Verde -->
-                    <div class="col-lg-4 col-md-6 galeria-item">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="images/merluza.jpg" alt="Merluza en Salsa Verde" class="galeria-img" 
-                                 data-bs-toggle="modal" data-bs-target="#lightboxModal" 
-                                 data-title="Merluza en Salsa Verde" 
-                                 data-description="Lomos de merluza del Cantábrico en salsa verde con almejas y espárragos trigueros. Un clásico de la cocina vasca.">
-                            <div class="pie-foto">
-                                <h5>Merluza en Salsa Verde</h5>
-                                <p>Con almejas y espárragos trigueros</p>
-                                <div class="text-end">
-                                    <span class="precio">22,90€</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Información adicional -->
-                <div class="row mt-5">
-                    <div class="col-md-8 mx-auto">
-                        <div class="alert alert-info">
-                            <h5 class="alert-heading">
-                                <i class="bi bi-info-circle me-2"></i>
-                                Sobre nuestros platos
-                            </h5>
-                            <p class="mb-0">
-                                Todas nuestras fotografías son reales y muestran exactamente lo que recibirás en tu mesa. 
-                                Utilizamos ingredientes frescos de temporada y técnicas tradicionales. 
-                                Las imágenes pueden variar ligeramente según disponibilidad del mercado.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Información adicional para alcanzar 3000px -->
             <div class="mt-5 pt-5">
                 <h3>Recomendaciones del Chef</h3>
-                <p>Nuestro chef recomienda estos maridajes para disfrutar al máximo de nuestros platos:</p>
+                <p>Nuestro chef Javier López recomienda estos maridajes para disfrutar al máximo de nuestros platos:</p>
                 
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="card mb-3 border-0 shadow-sm card-recomendacion">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <i class="bi bi-emoji-sunglasses me-2"></i>
                                     Para Carnes
                                 </h5>
                                 <p class="card-text">
-                                    <strong>Solomillo de ternera:</strong> Rioja Reserva 2018<br>
-                                    <strong>Pollo al horno:</strong> Verdejo Rueda 2022
+                                    <strong>Solomillo de ternera:</strong> Rioja Reserva 2018 - 22,00€<br>
+                                    <strong>Cochinillo asado:</strong> Ribera del Duero Crianza 2019 - 24,50€<br>
+                                    <strong>Cordero lechal:</strong> Toro 2020 - 23,90€
                                 </p>
                             </div>
                         </div>
@@ -413,12 +433,12 @@
                         <div class="card mb-3 border-0 shadow-sm card-recomendacion">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <i class="bi bi-emoji-heart-eyes me-2"></i>
                                     Para Pescados
                                 </h5>
                                 <p class="card-text">
-                                    <strong>Dorada:</strong> Albariño Rías Baixas 2023<br>
-                                    <strong>Merluza:</strong> Txakoli Getaria 2023
+                                    <strong>Dorada a la espalda:</strong> Albariño Rías Baixas 2023 - 19,90€<br>
+                                    <strong>Merluza en salsa verde:</strong> Txakoli Getaria 2023 - 18,50€<br>
+                                    <strong>Bacalao al pil-pil:</strong> Verdejo Rueda 2022 - 17,90€
                                 </p>
                             </div>
                         </div>
@@ -428,24 +448,53 @@
                 <!-- Más contenido para altura -->
                 <div class="row mt-5">
                     <div class="col-12">
-                        <h4>Políticas del Restaurante</h4>
+                        <h4>Información Importante</h4>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <i class="bi bi-clock-history me-2 text-primary"></i>
-                                <strong>Tiempos de preparación:</strong> Los platos se preparan al momento, el tiempo medio de espera es de 20-30 minutos.
+                                <strong>Tiempos de preparación:</strong> Los platos se preparan al momento con ingredientes frescos. El tiempo medio de espera es de 20-30 minutos. Los guisos y asados requieren más tiempo de elaboración.
                             </li>
                             <li class="list-group-item">
                                 <i class="bi bi-people-fill me-2 text-primary"></i>
-                                <strong>Grupos:</strong> Para grupos mayores de 8 personas, se recomienda reservar con al menos 48 horas de antelación.
+                                <strong>Grupos:</strong> Para grupos mayores de 8 personas, se recomienda reservar con al menos 48 horas de antelación. Disponemos de menús especiales para grupos.
                             </li>
                             <li class="list-group-item">
                                 <i class="bi bi-exclamation-triangle-fill me-2 text-primary"></i>
-                                <strong>Alergias:</strong> Informe a nuestro personal de cualquier alergia o intolerancia alimentaria.
+                                <strong>Alergias e intolerancias:</strong> Informe a nuestro personal de cualquier alergia o intolerancia alimentaria. Adaptamos nuestros platos siempre que sea posible.
                             </li>
                             <li class="list-group-item">
                                 <i class="bi bi-credit-card-fill me-2 text-primary"></i>
-                                <strong>Pagos:</strong> Aceptamos todas las tarjetas de crédito/débito y efectivo.
+                                <strong>Pagos:</strong> Aceptamos todas las tarjetas de crédito/débito, efectivo y Bizum. No aceptamos cheques.
                             </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-truck me-2 text-primary"></i>
+                                <strong>Take away:</strong> Todos nuestros platos están disponibles para llevar. El embalaje es reciclable y apto para microondas.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h5>Ingredientes de Calidad</h5>
+                        <p>Todos nuestros productos son de primera calidad:</p>
+                        <ul>
+                            <li>Verduras de la huerta madrileña</li>
+                            <li>Carnes con certificación de origen</li>
+                            <li>Pescados del día del mercado de Madrid</li>
+                            <li>Aceite de oliva virgen extra de Andalucía</li>
+                            <li>Vinos de denominación de origen</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Compromiso con la Tradición</h5>
+                        <p>En La Taberna del Ayer mantenemos viva la tradición:</p>
+                        <ul>
+                            <li>Recetas originales desde 1923</li>
+                            <li>Técnicas de cocina tradicional</li>
+                            <li>Elaboración artesanal</li>
+                            <li>Respeto por los tiempos de cocción</li>
+                            <li>Transmisión generacional del saber hacer</li>
                         </ul>
                     </div>
                 </div>
@@ -454,12 +503,18 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white py-4">
         <div class="container">
-            <p>© 2025 La Taberna del Ayer. Todos los derechos reservados.</p>
-            <p>
-                <a href="politica-privacidad.html">Política de Privacidad</a>
-            </p>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 La Taberna del Ayer. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="politica-privacidad.html" class="text-white text-decoration-none">Política de Privacidad</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -472,14 +527,6 @@
     <!-- Script propio -->
     <script src="js/script.js"></script>
     
-    <script>
-        // Configurar el botón de aceptar cookies
-        $(document).ready(function() {
-            $('#btn-aceptar-cookies').click(function() {
-                ponerCookie();
-            });
-        });
-    </script>
 </body>
 
 </html>
