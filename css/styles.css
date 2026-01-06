@@ -35,7 +35,7 @@ body{
 
 /*Header*/
 .hero-title {
-    background-image: url("../images/cabecera.jpg"); /* ruta a tu imagen */
+    background-image: url("../images/cabecera.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -206,26 +206,7 @@ footer a:hover {
 }
 
 
-/* Galería de imágenes */
-.gallery-container {
-    min-height: 1500px;
-}
 
-.gallery-item {
-    margin-bottom: 30px;
-}
-
-.gallery-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-}
 
 /* Avatar circular */
 .avatar-circle {
@@ -286,12 +267,12 @@ footer a:hover {
     width: 90%;
 }
 
-/* Asegurar altura mínima de páginas */
+/* Altura mínima de páginas */
 main {
     min-height: 3000px;
 }
 
-/* GALERÍA DE PLATOS (menu.html) */
+/* Galería de platos (menu.html) */
 .galeria-platos {
     margin-top: 60px;
     padding-top: 60px;
@@ -342,9 +323,7 @@ main {
     font-size: 1.1rem;
 }
 
-/* ============================================
-   GALERÍA JAVASCRIPT PURO (Lightbox)
-   ============================================ */
+/*Galeria*/
 
 /* Overlay de la galería */
 .galeria-js-overlay {
@@ -510,9 +489,8 @@ main {
     border-left: 4px solid #A0522D !important;
 }
 
-/* ESTILOS PARA ABOUT.HTML - Imágenes/Videos y texto lado a lado en pantallas grandes */
-@media (min-width: 992px) {
-    /* Para pantallas grandes: texto al lado de imágenes/videos */
+/* about.html adaptabilidad*/
+@media (min-width: 992px) {/*pantallas grandes*/
     .about-media-text-side {
         display: flex;
         align-items: center;
@@ -523,12 +501,12 @@ main {
         padding: 0 2rem;
     }
     
-    /* Asegurar que los videos/imágenes tengan altura consistente */
+    /* Altura consistente videos*/
     .about-media-container .ratio {
         height: 100%;
     }
     
-    /* Estilos específicos para los videos de about.html */
+    /* Estilos videos */
     .video-item {
         width: 100%;
         object-fit: cover;
@@ -537,7 +515,7 @@ main {
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     
-    /* Estilos específicos para las imágenes de about.html */
+    /* Estilosimágenes */
     .about-img-container img {
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -572,11 +550,7 @@ main {
     .carousel-text-bottom p {
         font-size: 0.9rem;
     }
-    
-    .gallery-img {
-        height: 200px;
-    }
-    
+        
     .galeria-img {
         height: 200px;
     }
@@ -587,9 +561,7 @@ main {
     }
 }
 
-/* ============================================
-   BANNER PROMOCIONAL NUEVO (about.html)
-   ============================================ */
+/*banner*/
 .banner-promocional {
     position: fixed;
     background: linear-gradient(90deg, #A0522D 0%, #8B4513 100%);
@@ -601,13 +573,6 @@ main {
 }
 
 /* Posiciones del banner */
-.banner-posicion-top {
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-}
-
 .banner-posicion-bottom {
     bottom: 0;
     left: 0;
@@ -692,7 +657,7 @@ main {
     100% { background-position: 200px 0; }
 }
 
-/* En pantallas EXTRA SMALL (XS) - móviles pequeños */
+/* banner pantallas xs */
 @media (max-width: 575.98px) {
     .banner-promocional {
         position: fixed;
@@ -744,7 +709,7 @@ main {
     }
 }
 
-/* Para pantallas SM y MD - tablets */
+/* banner pantallas medianas */
 @media (min-width: 576px) and (max-width: 991.98px) {
     .banner-promocional-contenido {
         padding: 12px 25px;
@@ -765,10 +730,7 @@ main {
     }
 }
 
-/* Espacio para que el contenido no quede tapado por el banner */
-.banner-posicion-top ~ main {
-    padding-top: 70px;
-}
+/* Posicionamiento banner */
 
 .banner-posicion-bottom ~ main,
 .banner-posicion-bottom ~ .container {
@@ -782,10 +744,7 @@ main {
     }
 }
 
-/* ============================================
-   ESTILOS NUEVOS PARA INDEX.HTML
-   ============================================ */
-/* Estilos para las nuevas secciones de index.html */
+/*index.html*/
 .icon-circle {
     width: 70px;
     height: 70px;
@@ -817,7 +776,7 @@ main {
     font-weight: bold;
     font-size: 1.2rem;
 }
-/* Estilos específicos para la tarjeta de contacto */
+/* Tarjeta contacto */
 .card .avatar-circle {
     width: 80px;
     height: 80px;
@@ -831,7 +790,8 @@ main {
     object-fit: cover;
     object-position: center;
 }
-/* Altura del bloque de información */
+/* Altura bloque de carta contacto y mapa */
+/*Uso mismo estilo para ambos para que queden de la misma altura y quede agradable a la vista, ya que son del mismo tamaño, si no, se quedaba uno mas alto que el otro.*/
 .card-contacto {
-    min-height: 660px; /* ajusta a gusto */
+    min-height: 660px;
 }

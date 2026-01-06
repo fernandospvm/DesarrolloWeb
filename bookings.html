@@ -144,6 +144,7 @@
                                         inputmode="numeric"
                                         pattern="[0-9]+"
                                         maxlength="9"
+                                        minlength="9"
                                     >
                                     <label for="telefono">Teléfono* (9 dígitos)</label>
                                     <div class="invalid-feedback">
@@ -218,9 +219,9 @@
                                 </p>
                             </form>
 
-                            <!-- Mensaje de éxito -->
+                            <!-- Se ha enviado correctamente -->
                             <div id="mensajeExito" class="alert alert-success mt-4 d-none">
-                                Reserva enviada correctamente ✅
+                                Reserva enviada correctamente. Le enviaremos una confirmación a su correo electrónico o a su teléfono.
                             </div>
                         </div>
                     </div>
@@ -259,7 +260,7 @@
         </div>
     </section>
 
-    <!-- Contenido adicional para alcanzar 3000px -->
+    <!-- info extra -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">

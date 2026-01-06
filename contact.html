@@ -126,7 +126,18 @@
 
                                 <!-- Teléfono con Floating Label -->
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="contactoTelefono" name="telefono" placeholder=" " required>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="contactoTelefono"
+                                        name="telefono"
+                                        placeholder=" "
+                                        required
+                                        inputmode="numeric"
+                                        pattern="[0-9]+"
+                                        maxlength="9"
+                                        minlength="9"
+                                    >
                                     <label for="contactoTelefono">Teléfono*</label>
                                     <div class="invalid-feedback">
                                         Introduce tu teléfono
@@ -169,9 +180,9 @@
                                 </div>
                             </form>
 
-                            <!-- Mensaje éxito -->
+                            <!-- Se ha enviado bien -->
                             <div id="mensajeContacto" class="alert alert-success mt-4 d-none">
-                                Mensaje enviado correctamente 📩
+                                Mensaje enviado correctamente.
                             </div>
                         </div>
                     </div>
@@ -315,7 +326,7 @@
                         Descubre detrás de cámaras, nuevos platos, eventos especiales y la historia de cada receta en nuestro Instagram oficial.
                     </p>
 
-                    <!-- Contenedor centrado del embed -->
+                    <!-- Contenedor del embed -->
                     <div class="d-flex justify-content-center">
                         <blockquote class="instagram-media" data-instgrm-captioned 
                             data-instgrm-permalink="https://www.instagram.com/p/DS49Bucijdp/" 
@@ -348,7 +359,7 @@
 
 
 
-    <!-- Contenido adicional para alcanzar 3000px -->
+    <!-- Preguntas frecuentes e Información adicional -->
     <section class="py-5">
         <div class="container">
             <div class="row">

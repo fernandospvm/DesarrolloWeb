@@ -1,12 +1,8 @@
-// ========================
-// CONFIGURACIÓN INICIAL
-// ========================
+
 document.addEventListener('DOMContentLoaded', function() {
     // Las cookies se manejan ahora con cookies.js
     
-    // ========================
-    // CARRUSEL AUTOMÁTICO
-    // ========================
+    //Carrusel
     const heroCarousel = document.getElementById('heroCarousel');
     if (heroCarousel) {
         // Inicializar el carrusel con autoplay
@@ -17,30 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========================
-    // GALERÍA JAVASCRIPT PURO
-    // ========================
+    //inicializar galería (funciones mas abajo)
     inicializarGaleriaJS();
     
-    // ========================
-    // BANNER MÓVIL
-    // ========================
-    const closeBannerBtn = document.getElementById('closeBannerBtn');
-    if (closeBannerBtn) {
-        closeBannerBtn.addEventListener('click', function() {
-            const banner = document.querySelector('.mobile-banner');
-            if (banner) {
-                banner.style.display = 'none';
-            }
-        });
-    }
 
-    // ========================
-    // FORMULARIO DE RESERVA
-    // ========================
+    //formularios de reserva con validacion y modificacion CSS con JavaScript
     const formReserva = document.getElementById('formReserva');
     if (formReserva) {
-        // Validar teléfono en tiempo real
         const telefonoInput = document.getElementById('telefono');
         if (telefonoInput) {
             telefonoInput.addEventListener('input', function() {
@@ -50,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        // Validar número de personas
         const personasInput = document.getElementById('personas');
         if (personasInput) {
             personasInput.addEventListener('input', function() {
@@ -61,25 +38,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        // Envío del formulario - AQUÍ MODIFICAMOS CSS CON JS
+        // Envío del formulario
+        //Puede dar error porque al enviar post (otro dominio) no deja CORS
         formReserva.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Primero verificar si se aceptaron cookies
+            // Primero verificar si se aceptaron cookies. No te dejara enviarlo a no ser que se acepten las cookies
             if (getCookie('aceptar_cookie') !== '1') {
                 alert('Debe aceptar las cookies para enviar el formulario.');
                 return;
             }
             
-            // 1. Primero validamos normalmente
             if (!formReserva.checkValidity()) {
-                // 2. Añadir clase de Bootstrap (como ya hacíamos)
                 formReserva.classList.add('was-validated');
-                
-                // 3. AHORA MODIFICAMOS CSS CON JAVASCRIPT (REQUISITO)
                 modificarCSSconJS(formReserva);
-                
                 return;
             }
             
@@ -91,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                // Mostrar mensaje de éxito
+                // Ha salido bien
                 const mensajeExito = document.getElementById('mensajeExito');
                 if (mensajeExito) {
                     mensajeExito.classList.remove('d-none');
@@ -105,9 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 formReserva.classList.remove('was-validated');
                 limpiarCSSconJS(formReserva);
                 
-                // Guardar datos del formulario en cookies (opcional)
+                // Guardar datos del formulario en cookies
                 setCookie('ultima_reserva', new Date().toISOString(), 30);
             })
+            //Error, avisamos por alert
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error al enviar la reserva. Por favor, inténtelo de nuevo.');
@@ -115,26 +88,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========================
-    // FORMULARIO DE CONTACTO
-    // ========================
+    //Formulario contacto
     const formContacto = document.getElementById('formContacto');
     if (formContacto) {
         formContacto.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Primero verificar si se aceptaron cookies
-            if (getCookie('aceptar_cookie') !== '1') {
-                alert('Debe aceptar las cookies para enviar el formulario.');
-                return;
-            }
-            
             // 1. Primero validamos normalmente
             if (!formContacto.checkValidity()) {
-                // 2. Añadir clase de Bootstrap (como ya hacíamos)
+                // 2. Añadir clase de Bootstrap 
                 formContacto.classList.add('was-validated');
                 
-                // 3. AHORA MODIFICAMOS CSS CON JAVASCRIPT (REQUISITO)
+                // 3. Modificar CSS con JS
                 modificarCSSconJS(formContacto);
                 
                 return;
@@ -148,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                // Mostrar mensaje de éxito
+                // Mostrar mensaje que se ha enviado bien
                 const mensajeContacto = document.getElementById('mensajeContacto');
                 if (mensajeContacto) {
                     mensajeContacto.classList.remove('d-none');
@@ -169,9 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========================
-    // FLECHAS DEL MENÚ DESPLEGABLE (menu.html)
-    // ========================
+    //flechas desplegables de la carta en menu.html
     const menuDia = document.getElementById('menu-dia');
     const flechaMenuDia = document.getElementById('flecha-menu-dia');
     
@@ -202,9 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========================
-    // AUTOPLAY VIDEOS (about.html)
-    // ========================
+    //Autoplay de videos al hacer scroll por ahi, (Funciona si se aceptan las cookies antes)
     const videos = document.querySelectorAll('.video-item');
     
     if (videos.length > 0) {
@@ -228,15 +189,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========================
-    // BANNER PROMOCIONAL (about.html)
-    // ========================
+//Inicializar banner 
     inicializarBannerPromocional();
 });
 
-// ========================
-// FUNCIONES PARA GALERÍA JS PURO
-// ========================
+//funciones galeria 
 
 function inicializarGaleriaJS() {
     const galeriaOverlay = document.getElementById('galeriaJS');
@@ -305,10 +262,7 @@ function inicializarGaleriaJS() {
     });
 }
 
-// ========================
-// FUNCIONES PARA VALIDACIÓN CON MODIFICACIÓN DE CSS MEDIANTE JS
-// ========================
-
+//funciones validacion formularios y modificacion CSS con JS
 function modificarCSSconJS(formulario) {
     // Obtener todos los campos inválidos
     const camposInvalidos = formulario.querySelectorAll(':invalid');
@@ -355,9 +309,7 @@ function limpiarCSSconJS(formulario) {
     });
 }
 
-// ========================
-// BANNER PROMOCIONAL NUEVO
-// ========================
+//Funcion del banner
 function inicializarBannerPromocional() {
     const banner = document.getElementById('bannerPromocional');
     const btnCerrar = document.getElementById('btnCerrarPromocional');
@@ -369,7 +321,7 @@ function inicializarBannerPromocional() {
         banner.style.display = 'none';
     });
     
-    // Ajustar posición del banner al cambiar tamaño de ventana
+    // Adaptar posicion del banner en distintos tamaños
     window.addEventListener('resize', function() {
         if (!banner || banner.style.display === 'none') return;
     });
