@@ -1,0 +1,77 @@
+navbar -> barra de navegación responsive -> si lo quitas, la barra pierde estilo de navbar
+navbar-expand-lg -> expande la navbar en pantallas grandes y colapsa en pequeñas -> si lo cambias a navbar-expand-md, colapsa antes
+navbar-dark -> texto claro sobre fondo oscuro -> si lo cambias a navbar-light, texto oscuro
+bg-dark -> fondo oscuro -> si lo cambias a bg-light, fondo claro
+container -> contenedor centrado con padding horizontal -> si lo quitas, el contenido toca los bordes
+navbar-brand -> marca o logo en navbar -> si lo quitas, el logo pierde estilo
+navbar-toggler -> botón para expandir navbar en móvil -> si lo quitas, la navbar no se puede expandir en móvil
+navbar-toggler-icon -> icono del toggle -> si lo quitas, el botón queda sin icono
+collapse -> contenedor colapsable -> si lo quitas, la navbar siempre se muestra
+navbar-collapse -> estilo para el collapse de navbar -> si lo quitas, puede afectar el comportamiento responsive
+navbar-nav -> lista de items en navbar -> si lo quitas, pierdes el layout horizontal
+nav-item -> item de la navbar -> si lo quitas, el item pierde padding y estilo
+nav-link -> enlace de navbar -> si lo quitas, pierde estilo de enlace
+active -> resalta elemento activo -> si lo quitas, deja de estar resaltado
+me-1 -> margen-end 0.25rem -> si lo cambias a me-2, aumenta a 0.5rem
+ms-auto -> margen-start automático (empuja a la derecha) -> si lo quitas, los elementos quedan a la izquierda
+hero-title -> clase personalizada (no es Bootstrap, ignorar)
+text-center -> centra texto horizontalmente -> si lo cambias a text-start, alinea a la izquierda
+py-5 -> padding vertical 3rem -> si lo cambias a py-3, el padding vertical se reduce
+display-4 -> tamaño de fuente grande -> si lo cambias a display-3, la fuente aumenta ligeramente
+fw-bold -> font-weight bold -> si lo cambias a fw-normal, la fuente pierde grosor
+card -> contenedor con borde, sombra ligera y padding -> si lo quitas, el bloque pierde estilo de card
+shadow-sm -> sombra ligera -> si lo cambias a shadow-lg, la sombra será más intensa
+card-body -> padding interno de la card -> si lo quitas, el contenido pega al borde
+p-4 -> padding 1.5rem -> si lo cambias a p-3, se reduce el padding
+mb-2 -> margen-bottom 0.5rem -> si lo cambias a mb-3, el margen aumenta a 1rem
+mb-3 -> margen-bottom 1rem -> si lo cambias a mb-2, se reduce a 0.5rem
+mb-4 -> margen-bottom 1.5rem -> si lo cambias a mb-5, aumenta a 3rem
+form-floating -> floating label para inputs -> si lo quitas, el label no flota
+form-control -> estilo input bootstrap -> si lo quitas, pierde padding y borde
+invalid-feedback -> mensaje de validación -> si lo quitas, no se muestra el mensaje de error
+d-grid -> display grid -> si lo quitas, el botón no ocupa todo el ancho del contenedor
+btn -> estilo base de botón -> si lo quitas, el elemento deja de ser botón
+btn-lg -> tamaño grande de botón -> si lo cambias a btn-sm, el botón será más pequeño
+alert -> contenedor de alerta -> si lo quitas, pierde padding, borde y fondo
+alert-success -> color verde para alert -> si lo cambias a alert-danger, se pone rojo
+mt-4 -> margin-top 1.5rem -> si lo cambias a mt-3, se reduce
+d-none -> display none -> si lo quitas, el elemento se muestra
+bg-light -> fondo claro -> si lo cambias a bg-dark, fondo oscuro
+col-md-4 -> columna de 4/12 en md+ -> si lo cambias a col-md-6, ocupa más espacio
+mb-5 -> margin-bottom 3rem -> si lo cambias a mb-4, disminuye
+mb-lg-0 -> margin-bottom 0 en lg+ -> si lo quitas, mantiene margen inferior
+h-100 -> altura 100% -> si lo quitas, el contenedor toma altura mínima
+flex-grow-1 -> flex:1 -> si lo quitas, no crece en el espacio disponible
+ratio -> contenedor con relación de aspecto -> si lo quitas, el iframe pierde proporción
+ratio-16x9 -> relación 16:9 -> si lo cambias a ratio-4x3, cambia la proporción
+text-muted -> texto gris -> si lo cambias a text-dark, se oscurece
+border-top -> borde superior -> si lo quitas, desaparece
+pt-3 -> padding-top 1rem -> si lo cambias a pt-4, aumenta
+py-3 -> padding vertical 1rem -> si lo cambias a py-4, aumenta
+bg-primary -> fondo azul -> si lo cambias a bg-success, fondo verde
+accordion -> contenedor de acordeón -> si lo quitas, los items no funcionan como acordeón
+accordion-item -> item de acordeón -> si lo quitas, pierde estructura
+accordion-header -> header del acordeón -> si lo quitas, pierde estilo
+accordion-button -> botón del acordeón -> si lo quitas, no se puede expandir/cerrar
+accordion-button.collapsed -> estilo para botón colapsado -> si lo quitas, no cambia apariencia de colapsado
+accordion-collapse -> contenedor colapsable de acordeón -> si lo quitas, no se colapsa
+accordion-body -> cuerpo del acordeón -> si lo quitas, pierde padding
+col-12 -> columna de 12/12 en xs -> si lo cambias a col-6, ocupa mitad del ancho
+text-md-end -> alinea texto a la derecha en md+ -> si lo cambias a text-md-start, alinea a la izquierda
+list-unstyled -> lista sin estilo -> si lo quitas, aparece con bullets
+list-group -> contenedor de lista -> si lo quitas, pierde estilos de group
+list-group-flush -> lista sin bordes entre items -> si lo quitas, vuelve a mostrar bordes
+list-group-item -> item de lista -> si lo quitas, pierde padding y borde
+border-0 -> sin borde -> si lo quitas, aparece borde
+btn-link -> botón estilo link -> si lo quitas, vuelve a ser botón normal
+p-0 -> padding 0 -> si lo cambias a p-1, añade padding
+text-dark -> texto oscuro -> si lo cambias a text-light, se vuelve claro
+collapse.show -> elemento colapsable visible -> si lo quitas, queda colapsado
+row -> contenedor flex para columnas -> si lo quitas, las columnas pierden estructura
+col-lg-4 -> columna 4/12 en lg+ -> si lo cambias a col-lg-6, ocupa más ancho
+col-md-6 -> columna 6/12 en md+ -> si lo cambias a col-md-4, ocupa menos ancho
+mb-3.mb-md-0 -> margen-bottom 1rem y 0 en md+ -> si lo cambias, se altera el responsive
+bg-light -> fondo claro -> si lo cambias a bg-dark, fondo oscuro
+px -> padding horizontal a ambos lados, py hace lo mismo pero en horizontal
+pe -> padding horizontal por la derecha unicamente, ps, lo mismo pero unicamente por la izquierda
+pt -> padding vertical solo por arriba, pb solo por debajo.

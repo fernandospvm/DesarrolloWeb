@@ -57,6 +57,22 @@ body {
     font-weight: bold;
 }
 
+/*Pregunta defensa - Navbar fijo en móviles y que al hacer scroll, no lo tape nada*/
+/* Navbar fijo en móvil*/
+/* Para móvil, hacer el navbar fijo */
+/*@media (max-width: 576px) {
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1040;
+    }
+
+
+}*/
+
 /* Índice del menú - página menu.html*/
 .menu-index {
     background-color: #ffffff;
@@ -168,7 +184,9 @@ footer a:hover {
 
 .carousel-text-bottom p {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
+    /*clamp(tamaño min, tamaño ideal,tamaño maximo)*/
     line-height: 1.3;
+    /*Expacio vertical entre lineas, 1.3 veces el tamaño de la fuente*/
     white-space: normal;
     overflow: visible;
     word-wrap: break-word;
@@ -243,6 +261,8 @@ footer a:hover {
 
 .was-validated .form-control:invalid~.invalid-feedback {
     display: block;
+
+    /*ocupa todo el ancho y empieza en una nueva línea*/
 }
 
 /* Contenedor de cookies */
@@ -457,9 +477,26 @@ main {
     }
 }
 
-@media (max-width: 576px) {
+/*Ejercicio de defensa - Las imagenes al hacer zoom en elllas ocupan el 100% del viewport en móvil, la imagen sobresale de todo*/
+/* @media (max-width: 576px) {
+
     .galeria-js-imagen {
-        max-height: 50vh;
+        max-height: 100vh !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        width: 100% !important;
+    }
+
+    .galeria-js-imagen-container {
+        height: 100vh !important;
+        border-radius: 0 !important;
+    }
+
+    .galeria-js-contenedor {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
     }
 
     .galeria-js-info {
@@ -473,7 +510,9 @@ main {
     .galeria-js-info p {
         font-size: 0.85rem;
     }
-}
+
+} */
+
 
 /* Asegurar que las imágenes de la galería sean clickeables */
 .galeria-img {
@@ -570,6 +609,7 @@ main {
     background: linear-gradient(90deg, #A0522D 0%, #8B4513 100%);
     color: white;
     z-index: 1040;
+    /*Se muestra por delante de todo*/
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
